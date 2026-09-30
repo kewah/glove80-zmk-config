@@ -1,0 +1,17 @@
+manifest:
+  remotes:
+    - name: moergo-sc
+      url-base: https://github.com/moergo-sc
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
+  projects:
+    - name: zmk
+      remote: moergo-sc
+      # Pin the Glove80 distribution for reproducible builds.
+      revision: 4b2f3b9b718a4508e87111cdec24cda16f3c2726
+      import: app/west.yml
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
+  self:
+    path: config

@@ -1,0 +1,6 @@
+# West builds separate UF2 files. Flash each file only to its named half.
+include:
+  - board: glove80_lh
+    artifact-name: glove80-left
+  - board: glove80_rh
+    artifact-name: glove80-right

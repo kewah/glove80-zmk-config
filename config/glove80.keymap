@@ -1,0 +1,328 @@
+// Glove80 Graphite layout ported from the Corne Choc Pro.
+// Source commit: 48767f99d8f37bef08a9b71a929d394685f63558
+// Alpha rows use the inner five columns of physical rows 3, 4, and 5.
+// Escape and Shift remain beside the left home and bottom alpha rows.
+// All additional finger keys and unused thumbs are disabled on every layer.
+// Thumb rows, OUTER -> INNER on EACH half:
+//   Left upper:  none, none, SYM       Right upper: none, none, NUM
+//   Left lower:  none, BSPC, EXT/MOD   Right lower: none, RET, SPACE
+// NUM keeps the original . on SYM and 0 on EXT/MOD thumb positions.
+// Behaviors/timing/macros are unchanged; combo/swapper positions are remapped.
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+#define BASE 0
+#define MOD  1
+#define EXT  2
+#define SYM  3
+#define NUM  4
+#define MF   5
+#define BT   6
+
+#define HYPER_MOD LG(LS(LA(LCTRL)))
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+};
+
+/ {
+    behaviors {
+        apo_dquote: apostrophe_doublequote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_qmark: comma_question_mark {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_excl: dot_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        slash_bslash: slash_backslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        backspace_delete: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        hm: hybrid_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&sk>;
+            retro-tap;
+        };
+
+        ext_mod: ext_or_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&sl>;
+            retro-tap;
+        };
+
+        // Cmd-Tab app switcher: holds Cmd across taps, released on
+        // interrupt (any other key or leaving EXT). Sticky Shift (pos 35)
+        // is ignored so it can reverse-cycle without dropping Cmd.
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <35>;
+        };
+
+        // Ctrl-Tab tab switcher: same tri-state as swapper but holds Ctrl,
+        // so taps cycle tabs while the browser switcher stays up. Sticky
+        // Shift (pos 35) is ignored so it can reverse-cycle (Ctrl+Shift+Tab).
+        tab_swapper: tab_swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+            ignored-key-positions = <35>;
+        };
+
+        // SYM/NUM activate immediately, stay sticky when tapped, and behave
+        // momentarily when a non-modifier is pressed while held. Modifier
+        // presses do not consume the sticky layer, allowing e.g. tap NUM,
+        // tap Ctrl+Shift, then tap 1.
+        sticky_layer: sticky_or_held_layer {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+            quick-release;
+            ignore-modifiers;
+        };
+    };
+
+    macros {
+        // Instant switch to previous app: Cmd released right away so
+        // the macOS switcher UI never shows (unlike &kp LG(TAB)).
+        quick_swap: quick_app_swap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,
+                       <&macro_tap &kp TAB>,
+                       <&macro_release &kp LGUI>;
+        };
+
+        tmx: tmux_prefix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,
+                       <&macro_tap &kp SPACE>,
+                       <&macro_release &kp LCTRL>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        // Word-left: H + A (Glove80 positions 41 + 42)
+        combo_word_left {
+            timeout-ms = <50>;
+            key-positions = <41 42>;
+            bindings = <&kp LA(LEFT)>;
+            layers = <EXT>;
+        };
+
+        // Word-right: A + E (Glove80 positions 42 + 43)
+        combo_word_right {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            bindings = <&kp LA(RIGHT)>;
+            layers = <EXT>;
+        };
+
+        // Keep parentheses, angle brackets, and square brackets on direct keys.
+        // Braces use the same index-middle fingers: openings above, closings below.
+        combo_sym_lbrc {
+            timeout-ms = <50>;
+            key-positions = <41 42>;
+            bindings = <&kp LBRC>;
+            layers = <SYM>;
+        };
+
+        combo_sym_rbrc {
+            timeout-ms = <50>;
+            key-positions = <59 60>;
+            bindings = <&kp RBRC>;
+            layers = <SYM>;
+        };
+
+        // The mirrored upper-inner layer thumbs open Media/Function together.
+        // Media/Function: SYM + NUM (Glove80 positions 54 + 55)
+        combo_mf_layer_thumbs {
+            timeout-ms = <100>;
+            key-positions = <54 55>;
+            bindings = <&mo MF>;
+            layers = <BASE>;
+        };
+
+        // MOD/EXT + the right upper-inner NUM key is reserved for maintenance.
+        // BT layer: Glove80 positions 71 + 55.
+        combo_bt {
+            timeout-ms = <100>;
+            key-positions = <71 55>;
+            bindings = <&mo BT>;
+            layers = <BASE>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            label = "BASE";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &kp B                   &kp L                   &kp D                   &kp W                   &kp Z                                                                                                                                                                       &apo_dquote             &kp F                   &kp O                   &kp U                   &kp J                   &none
+                // Alpha home
+                &kp ESC                 &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &none
+                // Alpha bottom + upper thumbs
+                &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &none                   &none                   &sticky_layer SYM       &sticky_layer NUM       &none                   &none                   &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &ext_mod EXT MOD        &kp SPACE               &kp RET                 &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        mod_layer {
+            label = "MOD";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &kp LG(LBKT)            &kp LC(TAB)             &quick_swap             &kp LG(W)               &kp LG(Z)                                                                                                                                                                   &trans                  &trans                  &trans                  &trans                  &trans                  &none
+                // Alpha home
+                &kp ESC                 &hm LSHFT LSHFT         &hm LALT LALT           &hm LCTRL LCTRL         &hm LGUI LGUI           &kp LG(R)                                                                                                                                                                   &trans                  &hm HYPER_MOD HYPER_MOD &trans                  &trans                  &tmx                    &trans
+                // Alpha bottom + upper thumbs
+                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &none                   &none                   &trans                  &trans                  &none                   &none                   &trans                  &trans                  &trans                  &trans                  &trans                  &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &kp LS(RET)             &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        ext_layer {
+            label = "EXT";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &kp LG(LBKT)            &tab_swapper            &swapper                &kp LG(W)               &kp LG(Z)                                                                                                                                                                   &kp RALT                &kp HOME                &kp END                 &none                   &kp PG_UP               &none
+                // Alpha home
+                &kp LG(GRAVE)           &sk LSHFT               &sk LALT                &sk LCTRL               &sk LGUI                &kp LG(R)                                                                                                                                                                   &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT               &tmx                    &none
+                // Alpha bottom + upper thumbs
+                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &none                   &none                   &trans                  &trans                  &none                   &none                   &none                   &kp TAB                 &kp DEL                 &none                   &kp PG_DN               &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &kp LS(RET)             &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        sym_layer {
+            label = "SYM";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &none                   &kp CARET               &kp AMPS                &kp PIPE                &none                                                                                                                                                                       &kp TILDE               &kp AT                  &kp GRAVE               &kp HASH                &kp DLLR                &none
+                // Alpha home
+                &none                   &sk LSHFT               &sk LALT                &sk LCTRL               &sk LGUI                &sk HYPER_MOD                                                                                                                                                               &kp MINUS               &kp LPAR                &kp LT                  &kp LBKT                &kp COLON               &none
+                // Alpha bottom + upper thumbs
+                &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &trans                  &trans                  &none                   &none                   &kp UNDER               &kp RPAR                &kp GT                  &kp RBKT                &kp SEMI                &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &trans                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        num_layer {
+            label = "NUM";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &kp FSLH                &kp N7                  &kp N8                  &kp N9                  &kp PRCNT                                                                                                                                                                   &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha home
+                &none                   &kp MINUS               &kp N1                  &kp N2                  &kp N3                  &kp PLUS                                                                                                                                                                    &sk HYPER_MOD           &sk LGUI                &sk LCTRL               &sk LALT                &sk LSHFT               &none
+                // Alpha bottom + upper thumbs
+                &none                   &kp COLON               &kp N4                  &kp N5                  &kp N6                  &kp ASTRK               &none                   &none                   &kp DOT                 &trans                  &none                   &none                   &kp UNDER               &kp EQUAL               &kp COMMA               &none                   &none                   &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &kp N0                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        mf_layer {
+            label = "MF";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &none                   &kp C_MUTE              &kp C_VOL_DN            &kp C_VOL_UP            &none                                                                                                                                                                       &kp F12                 &kp F7                  &kp F8                  &kp F9                  &none                   &none
+                // Alpha home
+                &none                   &kp C_STOP              &kp C_PP                &kp C_PREV              &kp C_NEXT              &none                                                                                                                                                                       &kp F10                 &kp F1                  &kp F2                  &kp F3                  &none                   &none
+                // Alpha bottom + upper thumbs
+                &none                   &none                   &kp C_BRI_DN            &kp C_BRI_UP            &none                   &none                   &none                   &none                   &trans                  &trans                  &none                   &none                   &kp F11                 &kp F4                  &kp F5                  &kp F6                  &none                   &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+
+        bt_layer {
+            label = "BT";
+            bindings = <
+                // Function row (unused)
+                &none                   &none                   &none                   &none                   &none                                                                                                                                                                                               &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
+                // Alpha top
+                &none                   &bt BT_CLR              &out OUT_USB            &out OUT_BLE            &none                   &none                                                                                                                                                                       &rgb_ug RGB_TOG         &rgb_ug RGB_HUI         &rgb_ug RGB_HUD         &rgb_ug RGB_BRI         &rgb_ug RGB_BRD         &none
+                // Alpha home
+                &none                   &bt BT_PRV              &bt BT_SEL 0            &bt BT_SEL 1            &bt BT_SEL 2            &bt BT_NXT                                                                                                                                                                  &rgb_ug RGB_EFF         &rgb_ug RGB_SAI         &rgb_ug RGB_SAD         &none                   &none                   &none
+                // Alpha bottom + upper thumbs
+                &none                   &none                   &bt BT_SEL 3            &bt BT_SEL 4            &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none
+                // Extra bottom row (unused) + lower thumbs
+                &none                   &none                   &none                   &none                   &none                                           &none                   &none                   &none                   &none                   &none                   &none                                           &none                   &none                   &none                   &none                   &none
+            >;
+        };
+    };
+};
