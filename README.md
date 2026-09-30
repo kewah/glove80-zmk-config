@@ -29,20 +29,37 @@ Q/A/Z rows. The two rows above and extra finger row below are unassigned.
 Escape remains outside the left home row; Shift remains directly below Escape.
 The remaining outside finger keys are unassigned.
 
-Thumbs are listed **outer → inner on EACH half**, exactly as requested:
+Thumb placement is anchored to the **original factory key positions** to avoid
+ambiguity about inner/outer on the curved thumb clusters. The first build had
+these thumb ends reversed; this corrected layout uses:
 
-| Thumb row | Left outer | Left middle | Left inner | Right outer | Right middle | Right inner |
-| --- | --- | --- | --- | --- | --- | --- |
-| Upper | — | — | SYM | — | — | NUM |
-| Lower | — | Backspace | EXT/MOD | — | Enter | Space |
+| Half | Factory key position | New binding | Matrix position |
+| --- | --- | --- | --- |
+| Left | Shift | SYM | 52 |
+| Left | Ctrl | Disabled | 53 |
+| Left | Layer/Lower | Disabled | 54 |
+| Left | Backspace | EXT/MOD | 69 |
+| Left | Delete | Backspace / Shift+Backspace = Delete | 70 |
+| Left | Alt | Disabled | 71 |
+| Right | GUI/Command | Disabled | 55 |
+| Right | Ctrl | Disabled | 56 |
+| Right | Shift | NUM | 57 |
+| Right | Alt | Disabled | 72 |
+| Right | Enter | Enter | 73 |
+| Right | Space | Space | 74 |
 
-Viewed across the keyboard, left to right (right side is therefore reversed):
+In the row order used by MoErgo's factory keymap:
 
 ```text
-       Left thumbs                Right thumbs
-upper:  —    —    SYM      |      NUM    —     —
-lower:  —   BSPC EXT/MOD   |      SPACE ENTER  —
+factory upper: LShift LCtrl Lower  |  GUI RCtrl RShift
+new upper:       SYM    —     —    |   —    —     NUM
+
+factory lower:  BSPC   DEL  LAlt   |  RAlt ENTER SPACE
+new lower:     EXT/MOD BSPC   —    |   —   ENTER SPACE
 ```
+
+SYM/NUM use the two factory Shift thumb keys, not the dedicated finger Shift
+beside the bottom alpha row. Lower Enter and Space retain their factory positions.
 
 Unused thumbs are disabled on **every** layer. Backspace becomes Delete when
 Shift is active. Enter becomes Shift+Enter on MOD and EXT. On NUM, the SYM thumb
@@ -149,8 +166,8 @@ Backspace/Enter/Space unchanged. Both braces remain available through combos.
  :    4    5    6    *      |    _      =     ,     —      —
 ```
 
-Left upper-inner thumb (normally SYM): `.`.
-Left lower-inner thumb (normally EXT/MOD): `0`.
+Factory left Shift thumb (normally SYM): `.`.
+Factory Backspace thumb (normally EXT/MOD): `0`.
 Backspace/Enter/Space unchanged.
 
 ### MF (hold SYM + NUM)
@@ -184,8 +201,8 @@ not force BLE output). RGB controls retain their original meanings.
 | EXT | A + E (42 + 43): Up + Right | Option+Right (word right) |
 | SYM | H + A (41 + 42): `(` + `<` | `{` |
 | SYM | P + comma (59 + 60): `)` + `>` | `}` |
-| BASE | SYM + NUM (54 + 55) | Hold MF |
-| BASE | EXT/MOD + NUM (71 + 55) | Hold BT |
+| BASE | SYM + NUM (52 + 57): factory left + right Shift | Hold MF |
+| BASE | EXT/MOD + NUM (69 + 57): factory Backspace + right Shift | Hold BT |
 
 Tri-state switchers ignore position **35**, the left home-row sticky Shift.
 Combo and ignored-key positions were remapped to Glove80's 80-key matrix.

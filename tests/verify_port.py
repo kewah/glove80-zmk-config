@@ -8,7 +8,8 @@ CORNE = ROOT / "reference/corne_choc_pro.keymap"
 GLOVE80 = ROOT / "config/glove80.keymap"
 
 # Glove80's row-major matrix includes both thumb rows between finger columns.
-# Thumb values are deliberately not a sequential copy of the Corne thumb row.
+# Anchor thumbs to MoErgo's factory keymap: left Shift=52, Backspace=69,
+# Delete=70; right Shift=57, Enter=73, Space=74.
 POSITIONS = {
     **dict(zip(range(0, 6), range(22, 28))),
     **dict(zip(range(8, 14), range(28, 34))),
@@ -16,7 +17,7 @@ POSITIONS = {
     **dict(zip(range(22, 28), range(40, 46))),
     **dict(zip(range(28, 34), range(46, 52))),
     **dict(zip(range(34, 40), range(58, 64))),
-    40: 54, 41: 71, 42: 70, 43: 73, 44: 72, 45: 55,
+    40: 52, 41: 69, 42: 70, 43: 73, 44: 74, 45: 57,
 }
 
 
@@ -57,18 +58,21 @@ class CornePortTests(unittest.TestCase):
                     expected[new] = original[old]
                 self.assertEqual(self.new_layers[name], expected)
 
-    def test_thumb_orientation(self):
+    def test_factory_thumb_positions(self):
         base = self.new_layers["BASE"]
+        # Order from the official factory keymap:
+        # LShift, LCtrl, Lower | LGUI, RCtrl, RShift
         self.assertEqual(base[52:58], [
-            "&none", "&none", "&sticky_layer SYM",
-            "&sticky_layer NUM", "&none", "&none",
+            "&sticky_layer SYM", "&none", "&none",
+            "&none", "&none", "&sticky_layer NUM",
         ])
+        # Backspace, Delete, LAlt | RAlt, Enter, Space
         self.assertEqual(base[69:75], [
-            "&none", "&backspace_delete", "&ext_mod EXT MOD",
-            "&kp SPACE", "&kp RET", "&none",
+            "&ext_mod EXT MOD", "&backspace_delete", "&none",
+            "&none", "&kp RET", "&kp SPACE",
         ])
-        self.assertEqual(self.new_layers["NUM"][54], "&kp DOT")
-        self.assertEqual(self.new_layers["NUM"][71], "&kp N0")
+        self.assertEqual(self.new_layers["NUM"][52], "&kp DOT")
+        self.assertEqual(self.new_layers["NUM"][69], "&kp N0")
 
     def test_behaviors_macros_combos_and_timing(self):
         original = self.source.split("    keymap {")[0]

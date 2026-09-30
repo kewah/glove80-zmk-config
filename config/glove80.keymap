@@ -3,9 +3,10 @@
 // Alpha rows use the inner five columns of physical rows 3, 4, and 5.
 // Escape and Shift remain beside the left home and bottom alpha rows.
 // All additional finger keys and unused thumbs are disabled on every layer.
-// Thumb rows, OUTER -> INNER on EACH half:
-//   Left upper:  none, none, SYM       Right upper: none, none, NUM
-//   Left lower:  none, BSPC, EXT/MOD   Right lower: none, RET, SPACE
+// Thumb positions are anchored to factory keycaps (not ambiguous inner/outer):
+//   Left Shift -> SYM; Backspace -> EXT/MOD; Delete -> Backspace.
+//   Right Shift -> NUM; Enter -> Enter; Space -> Space.
+//   Other factory thumb positions remain disabled.
 // NUM keeps the original . on SYM and 0 on EXT/MOD thumb positions.
 // Behaviors/timing/macros are unchanged; combo/swapper positions are remapped.
 
@@ -177,20 +178,20 @@
             layers = <SYM>;
         };
 
-        // The mirrored upper-inner layer thumbs open Media/Function together.
-        // Media/Function: SYM + NUM (Glove80 positions 54 + 55)
+        // The factory Shift thumb positions open Media/Function together.
+        // Media/Function: SYM + NUM (Glove80 positions 52 + 57)
         combo_mf_layer_thumbs {
             timeout-ms = <100>;
-            key-positions = <54 55>;
+            key-positions = <52 57>;
             bindings = <&mo MF>;
             layers = <BASE>;
         };
 
-        // MOD/EXT + the right upper-inner NUM key is reserved for maintenance.
-        // BT layer: Glove80 positions 71 + 55.
+        // MOD/EXT + NUM (factory Backspace + right Shift) opens maintenance.
+        // BT layer: Glove80 positions 69 + 57.
         combo_bt {
             timeout-ms = <100>;
-            key-positions = <71 55>;
+            key-positions = <69 57>;
             bindings = <&mo BT>;
             layers = <BASE>;
         };
@@ -211,9 +212,9 @@
                 // Alpha home
                 &kp ESC                 &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &none
                 // Alpha bottom + upper thumbs
-                &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &none                   &none                   &sticky_layer SYM       &sticky_layer NUM       &none                   &none                   &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &none
+                &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &sticky_layer SYM       &none                   &none                   &none                   &none                   &sticky_layer NUM       &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &ext_mod EXT MOD        &kp SPACE               &kp RET                 &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &ext_mod EXT MOD        &backspace_delete       &none                   &none                   &kp RET                 &kp SPACE                                       &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -229,9 +230,9 @@
                 // Alpha home
                 &kp ESC                 &hm LSHFT LSHFT         &hm LALT LALT           &hm LCTRL LCTRL         &hm LGUI LGUI           &kp LG(R)                                                                                                                                                                   &trans                  &hm HYPER_MOD HYPER_MOD &trans                  &trans                  &tmx                    &trans
                 // Alpha bottom + upper thumbs
-                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &none                   &none                   &trans                  &trans                  &none                   &none                   &trans                  &trans                  &trans                  &trans                  &trans                  &none
+                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &trans                  &none                   &none                   &none                   &none                   &trans                  &trans                  &trans                  &trans                  &trans                  &trans                  &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &kp LS(RET)             &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &kp LS(RET)             &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -247,9 +248,9 @@
                 // Alpha home
                 &kp LG(GRAVE)           &sk LSHFT               &sk LALT                &sk LCTRL               &sk LGUI                &kp LG(R)                                                                                                                                                                   &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT               &tmx                    &none
                 // Alpha bottom + upper thumbs
-                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &none                   &none                   &trans                  &trans                  &none                   &none                   &none                   &kp TAB                 &kp DEL                 &none                   &kp PG_DN               &none
+                &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &trans                  &none                   &none                   &none                   &none                   &trans                  &none                   &kp TAB                 &kp DEL                 &none                   &kp PG_DN               &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &kp LS(RET)             &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &kp LS(RET)             &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -265,9 +266,9 @@
                 // Alpha home
                 &none                   &sk LSHFT               &sk LALT                &sk LCTRL               &sk LGUI                &sk HYPER_MOD                                                                                                                                                               &kp MINUS               &kp LPAR                &kp LT                  &kp LBKT                &kp COLON               &none
                 // Alpha bottom + upper thumbs
-                &none                   &none                   &none                   &none                   &none                   &none                   &none                   &none                   &trans                  &trans                  &none                   &none                   &kp UNDER               &kp RPAR                &kp GT                  &kp RBKT                &kp SEMI                &none
+                &none                   &none                   &none                   &none                   &none                   &none                   &trans                  &none                   &none                   &none                   &none                   &trans                  &kp UNDER               &kp RPAR                &kp GT                  &kp RBKT                &kp SEMI                &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &trans                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &backspace_delete       &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -283,9 +284,9 @@
                 // Alpha home
                 &none                   &kp MINUS               &kp N1                  &kp N2                  &kp N3                  &kp PLUS                                                                                                                                                                    &sk HYPER_MOD           &sk LGUI                &sk LCTRL               &sk LALT                &sk LSHFT               &none
                 // Alpha bottom + upper thumbs
-                &none                   &kp COLON               &kp N4                  &kp N5                  &kp N6                  &kp ASTRK               &none                   &none                   &kp DOT                 &trans                  &none                   &none                   &kp UNDER               &kp EQUAL               &kp COMMA               &none                   &none                   &none
+                &none                   &kp COLON               &kp N4                  &kp N5                  &kp N6                  &kp ASTRK               &kp DOT                 &none                   &none                   &none                   &none                   &trans                  &kp UNDER               &kp EQUAL               &kp COMMA               &none                   &none                   &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &backspace_delete       &kp N0                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &kp N0                  &backspace_delete       &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -301,9 +302,9 @@
                 // Alpha home
                 &none                   &kp C_STOP              &kp C_PP                &kp C_PREV              &kp C_NEXT              &none                                                                                                                                                                       &kp F10                 &kp F1                  &kp F2                  &kp F3                  &none                   &none
                 // Alpha bottom + upper thumbs
-                &none                   &none                   &kp C_BRI_DN            &kp C_BRI_UP            &none                   &none                   &none                   &none                   &trans                  &trans                  &none                   &none                   &kp F11                 &kp F4                  &kp F5                  &kp F6                  &none                   &none
+                &none                   &none                   &kp C_BRI_DN            &kp C_BRI_UP            &none                   &none                   &trans                  &none                   &none                   &none                   &none                   &trans                  &kp F11                 &kp F4                  &kp F5                  &kp F6                  &none                   &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &none                   &trans                  &trans                  &trans                  &trans                  &none                                           &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
