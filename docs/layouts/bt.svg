@@ -1,106 +1,408 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="410" viewBox="0 0 1160 410" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="426" viewBox="0 0 1640 426" role="img" aria-labelledby="title desc">
 <title id="title">BT layer</title>
-<desc id="desc">Left and right finger keys, with two rows of thumb keys below each half. Simplified keyboard viewing order.</desc>
-<rect width="1160" height="410" rx="16" fill="#0f172a"/>
+<desc id="desc">Full 80-key Glove80 layout in keyboard viewing order. All six finger rows and both thumb rows are shown, including disabled keys.</desc>
+<rect width="1640" height="426" rx="16" fill="#0f172a"/>
 <g font-family="system-ui, sans-serif" text-anchor="middle">
 <text x="272" y="32" fill="#94a3b8" font-size="14">LEFT</text>
-<text x="904" y="32" fill="#94a3b8" font-size="14">RIGHT</text>
+<text x="1364" y="32" fill="#94a3b8" font-size="14">RIGHT</text>
+<g data-position="0" data-binding="&amp;none">
+<title>Position 0: &amp;none</title>
 <rect x="24" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="82" fill="#64748b" font-size="18">—</text>
-<rect x="108" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="82" fill="#f1f5f9" font-size="14">BT CLR</text>
-<rect x="192" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="230" y="82" fill="#f1f5f9" font-size="14">OUT USB</text>
-<rect x="276" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="314" y="82" fill="#f1f5f9" font-size="14">OUT BLE</text>
+</g>
+<g data-position="1" data-binding="&amp;none">
+<title>Position 1: &amp;none</title>
+<rect x="108" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="2" data-binding="&amp;none">
+<title>Position 2: &amp;none</title>
+<rect x="192" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="230" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="3" data-binding="&amp;none">
+<title>Position 3: &amp;none</title>
+<rect x="276" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="314" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="4" data-binding="&amp;none">
+<title>Position 4: &amp;none</title>
 <rect x="360" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="398" y="82" fill="#64748b" font-size="18">—</text>
-<rect x="444" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="482" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="5" data-binding="&amp;none">
+<title>Position 5: &amp;none</title>
+<rect x="1200" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="6" data-binding="&amp;none">
+<title>Position 6: &amp;none</title>
+<rect x="1284" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="7" data-binding="&amp;none">
+<title>Position 7: &amp;none</title>
+<rect x="1368" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="8" data-binding="&amp;none">
+<title>Position 8: &amp;none</title>
+<rect x="1452" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="9" data-binding="&amp;none">
+<title>Position 9: &amp;none</title>
+<rect x="1536" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="82" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="10" data-binding="&amp;none">
+<title>Position 10: &amp;none</title>
 <rect x="24" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="142" fill="#64748b" font-size="18">—</text>
-<rect x="108" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="142" fill="#f1f5f9" font-size="14">BT PRV</text>
-<rect x="192" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="230" y="142" fill="#f1f5f9" font-size="18">BT 0</text>
-<rect x="276" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="314" y="142" fill="#f1f5f9" font-size="18">BT 1</text>
-<rect x="360" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="398" y="142" fill="#f1f5f9" font-size="18">BT 2</text>
-<rect x="444" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="482" y="142" fill="#f1f5f9" font-size="14">BT NXT</text>
+</g>
+<g data-position="11" data-binding="&amp;none">
+<title>Position 11: &amp;none</title>
+<rect x="108" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="12" data-binding="&amp;none">
+<title>Position 12: &amp;none</title>
+<rect x="192" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="230" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="13" data-binding="&amp;none">
+<title>Position 13: &amp;none</title>
+<rect x="276" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="314" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="14" data-binding="&amp;none">
+<title>Position 14: &amp;none</title>
+<rect x="360" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="398" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="15" data-binding="&amp;none">
+<title>Position 15: &amp;none</title>
+<rect x="444" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="482" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="16" data-binding="&amp;none">
+<title>Position 16: &amp;none</title>
+<rect x="1116" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1154" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="17" data-binding="&amp;none">
+<title>Position 17: &amp;none</title>
+<rect x="1200" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="18" data-binding="&amp;none">
+<title>Position 18: &amp;none</title>
+<rect x="1284" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="19" data-binding="&amp;none">
+<title>Position 19: &amp;none</title>
+<rect x="1368" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="20" data-binding="&amp;none">
+<title>Position 20: &amp;none</title>
+<rect x="1452" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="21" data-binding="&amp;none">
+<title>Position 21: &amp;none</title>
+<rect x="1536" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="142" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="22" data-binding="&amp;none">
+<title>Position 22: &amp;none</title>
 <rect x="24" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="23" data-binding="&amp;none">
+<title>Position 23: &amp;none</title>
 <rect x="108" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="146" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="24" data-binding="&amp;out OUT_USB">
+<title>Position 24: &amp;out OUT_USB</title>
 <rect x="192" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="230" y="202" fill="#f1f5f9" font-size="18">BT 3</text>
+<text x="230" y="202" fill="#f1f5f9" font-size="14">OUT USB</text>
+</g>
+<g data-position="25" data-binding="&amp;out OUT_BLE">
+<title>Position 25: &amp;out OUT_BLE</title>
 <rect x="276" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="314" y="202" fill="#f1f5f9" font-size="18">BT 4</text>
+<text x="314" y="202" fill="#f1f5f9" font-size="14">OUT BLE</text>
+</g>
+<g data-position="26" data-binding="&amp;none">
+<title>Position 26: &amp;none</title>
 <rect x="360" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="398" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="27" data-binding="&amp;none">
+<title>Position 27: &amp;none</title>
 <rect x="444" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="482" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="656" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="694" y="82" fill="#f1f5f9" font-size="14">RGB TOG</text>
-<rect x="740" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="778" y="82" fill="#f1f5f9" font-size="14">RGB HUI</text>
-<rect x="824" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="862" y="82" fill="#f1f5f9" font-size="14">RGB HUD</text>
-<rect x="908" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="946" y="82" fill="#f1f5f9" font-size="14">RGB BRI</text>
-<rect x="992" y="52" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1030" y="82" fill="#f1f5f9" font-size="14">RGB BRD</text>
-<rect x="1076" y="52" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1114" y="82" fill="#64748b" font-size="18">—</text>
-<rect x="656" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="694" y="142" fill="#f1f5f9" font-size="14">RGB EFF</text>
-<rect x="740" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="778" y="142" fill="#f1f5f9" font-size="14">RGB SAI</text>
-<rect x="824" y="112" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="862" y="142" fill="#f1f5f9" font-size="14">RGB SAD</text>
-<rect x="908" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="946" y="142" fill="#64748b" font-size="18">—</text>
-<rect x="992" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1030" y="142" fill="#64748b" font-size="18">—</text>
-<rect x="1076" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1114" y="142" fill="#64748b" font-size="18">—</text>
-<rect x="656" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="694" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="740" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="778" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="824" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="862" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="908" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="946" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="992" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1030" y="202" fill="#64748b" font-size="18">—</text>
-<rect x="1076" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1114" y="202" fill="#64748b" font-size="18">—</text>
-<text x="398" y="252" fill="#94a3b8" font-size="12">THUMBS</text>
-<rect x="276" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="314" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="360" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="398" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="444" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="482" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="276" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="314" y="356" fill="#64748b" font-size="18">—</text>
-<rect x="360" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="398" y="356" fill="#64748b" font-size="18">—</text>
-<rect x="444" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="482" y="356" fill="#64748b" font-size="18">—</text>
-<text x="778" y="252" fill="#94a3b8" font-size="12">THUMBS</text>
-<rect x="656" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="694" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="740" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="778" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="824" y="266" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="862" y="296" fill="#64748b" font-size="18">—</text>
-<rect x="656" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="694" y="356" fill="#64748b" font-size="18">—</text>
-<rect x="740" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="778" y="356" fill="#64748b" font-size="18">—</text>
-<rect x="824" y="326" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="862" y="356" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="28" data-binding="&amp;none">
+<title>Position 28: &amp;none</title>
+<rect x="1116" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1154" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="29" data-binding="&amp;none">
+<title>Position 29: &amp;none</title>
+<rect x="1200" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="30" data-binding="&amp;none">
+<title>Position 30: &amp;none</title>
+<rect x="1284" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="31" data-binding="&amp;none">
+<title>Position 31: &amp;none</title>
+<rect x="1368" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="32" data-binding="&amp;none">
+<title>Position 32: &amp;none</title>
+<rect x="1452" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="33" data-binding="&amp;none">
+<title>Position 33: &amp;none</title>
+<rect x="1536" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="202" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="34" data-binding="&amp;none">
+<title>Position 34: &amp;none</title>
+<rect x="24" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="62" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="35" data-binding="&amp;bt BT_PRV">
+<title>Position 35: &amp;bt BT_PRV</title>
+<rect x="108" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="146" y="262" fill="#f1f5f9" font-size="14">BT Prev</text>
+</g>
+<g data-position="36" data-binding="&amp;bt BT_SEL 1">
+<title>Position 36: &amp;bt BT_SEL 1</title>
+<rect x="192" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="230" y="262" fill="#f1f5f9" font-size="18">BT 1</text>
+</g>
+<g data-position="37" data-binding="&amp;bt BT_SEL 2">
+<title>Position 37: &amp;bt BT_SEL 2</title>
+<rect x="276" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="314" y="262" fill="#f1f5f9" font-size="18">BT 2</text>
+</g>
+<g data-position="38" data-binding="&amp;bt BT_SEL 3">
+<title>Position 38: &amp;bt BT_SEL 3</title>
+<rect x="360" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="398" y="262" fill="#f1f5f9" font-size="18">BT 3</text>
+</g>
+<g data-position="39" data-binding="&amp;bt BT_NXT">
+<title>Position 39: &amp;bt BT_NXT</title>
+<rect x="444" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="482" y="262" fill="#f1f5f9" font-size="14">BT Next</text>
+</g>
+<g data-position="40" data-binding="&amp;none">
+<title>Position 40: &amp;none</title>
+<rect x="1116" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1154" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="41" data-binding="&amp;none">
+<title>Position 41: &amp;none</title>
+<rect x="1200" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="42" data-binding="&amp;none">
+<title>Position 42: &amp;none</title>
+<rect x="1284" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="43" data-binding="&amp;none">
+<title>Position 43: &amp;none</title>
+<rect x="1368" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="44" data-binding="&amp;none">
+<title>Position 44: &amp;none</title>
+<rect x="1452" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="45" data-binding="&amp;none">
+<title>Position 45: &amp;none</title>
+<rect x="1536" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="262" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="46" data-binding="&amp;none">
+<title>Position 46: &amp;none</title>
+<rect x="24" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="62" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="47" data-binding="&amp;none">
+<title>Position 47: &amp;none</title>
+<rect x="108" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="48" data-binding="&amp;bt BT_SEL 4">
+<title>Position 48: &amp;bt BT_SEL 4</title>
+<rect x="192" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="230" y="322" fill="#f1f5f9" font-size="18">BT 4</text>
+</g>
+<g data-position="49" data-binding="&amp;none">
+<title>Position 49: &amp;none</title>
+<rect x="276" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="314" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="50" data-binding="&amp;none">
+<title>Position 50: &amp;none</title>
+<rect x="360" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="398" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="51" data-binding="&amp;none">
+<title>Position 51: &amp;none</title>
+<rect x="444" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="482" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="52" data-binding="&amp;none">
+<title>Position 52: &amp;none</title>
+<rect x="528" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="566" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="53" data-binding="&amp;none">
+<title>Position 53: &amp;none</title>
+<rect x="612" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="650" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="54" data-binding="&amp;none">
+<title>Position 54: &amp;none</title>
+<rect x="696" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="734" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="55" data-binding="&amp;trans">
+<title>Position 55: &amp;trans</title>
+<rect x="864" y="292" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="902" y="322" fill="#a5f3fc" font-size="18">·</text>
+</g>
+<g data-position="56" data-binding="&amp;none">
+<title>Position 56: &amp;none</title>
+<rect x="948" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="986" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="57" data-binding="&amp;none">
+<title>Position 57: &amp;none</title>
+<rect x="1032" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1070" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="58" data-binding="&amp;none">
+<title>Position 58: &amp;none</title>
+<rect x="1116" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1154" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="59" data-binding="&amp;none">
+<title>Position 59: &amp;none</title>
+<rect x="1200" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="60" data-binding="&amp;none">
+<title>Position 60: &amp;none</title>
+<rect x="1284" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="61" data-binding="&amp;none">
+<title>Position 61: &amp;none</title>
+<rect x="1368" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="62" data-binding="&amp;none">
+<title>Position 62: &amp;none</title>
+<rect x="1452" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="63" data-binding="&amp;none">
+<title>Position 63: &amp;none</title>
+<rect x="1536" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="322" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="64" data-binding="&amp;bt BT_CLR">
+<title>Position 64: &amp;bt BT_CLR</title>
+<rect x="24" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="62" y="382" fill="#f1f5f9" font-size="18">BT CLR</text>
+</g>
+<g data-position="65" data-binding="&amp;none">
+<title>Position 65: &amp;none</title>
+<rect x="108" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="66" data-binding="&amp;none">
+<title>Position 66: &amp;none</title>
+<rect x="192" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="230" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="67" data-binding="&amp;none">
+<title>Position 67: &amp;none</title>
+<rect x="276" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="314" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="68" data-binding="&amp;none">
+<title>Position 68: &amp;none</title>
+<rect x="360" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="398" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="69" data-binding="&amp;bt BT_SEL 0">
+<title>Position 69: &amp;bt BT_SEL 0</title>
+<rect x="528" y="352" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="566" y="382" fill="#a5f3fc" font-size="18">BT 0</text>
+</g>
+<g data-position="70" data-binding="&amp;none">
+<title>Position 70: &amp;none</title>
+<rect x="612" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="650" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="71" data-binding="&amp;none">
+<title>Position 71: &amp;none</title>
+<rect x="696" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="734" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="72" data-binding="&amp;none">
+<title>Position 72: &amp;none</title>
+<rect x="864" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="902" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="73" data-binding="&amp;none">
+<title>Position 73: &amp;none</title>
+<rect x="948" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="986" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="74" data-binding="&amp;none">
+<title>Position 74: &amp;none</title>
+<rect x="1032" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1070" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="75" data-binding="&amp;none">
+<title>Position 75: &amp;none</title>
+<rect x="1200" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1238" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="76" data-binding="&amp;none">
+<title>Position 76: &amp;none</title>
+<rect x="1284" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1322" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="77" data-binding="&amp;none">
+<title>Position 77: &amp;none</title>
+<rect x="1368" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1406" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="78" data-binding="&amp;none">
+<title>Position 78: &amp;none</title>
+<rect x="1452" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="382" fill="#64748b" font-size="18">—</text>
+</g>
+<g data-position="79" data-binding="&amp;none">
+<title>Position 79: &amp;none</title>
+<rect x="1536" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="382" fill="#64748b" font-size="18">—</text>
+</g>
 </g></svg>
