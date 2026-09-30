@@ -1,5 +1,4 @@
-// Glove80 Graphite layout ported from the Corne Choc Pro.
-// Source commit: 48767f99d8f37bef08a9b71a929d394685f63558
+// Glove80 Graphite layout.
 // Alpha rows use the inner five columns of physical rows 3, 4, and 5.
 // Escape and Shift remain beside the left home and bottom alpha rows.
 // All additional finger keys and unused thumbs are disabled on every layer.
@@ -7,8 +6,7 @@
 //   Left Shift -> SYM; Backspace -> EXT/MOD; Delete -> Backspace.
 //   Right Shift -> NUM; Enter -> Enter; Space -> Space.
 //   Other factory thumb positions remain disabled.
-// NUM keeps the original . on SYM and 0 on EXT/MOD thumb positions.
-// Behaviors/timing/macros are unchanged; combo/swapper positions are remapped.
+// NUM sends . on SYM and 0 on EXT/MOD thumb positions.
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>

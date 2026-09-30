@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify Corne port
-        run: python3 tests/verify_port.py
+      - name: Verify Glove80 keymap
+        run: python3 tests/verify_keymap.py
 
   build:
     needs: verify
