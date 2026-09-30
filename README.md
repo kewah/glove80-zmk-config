@@ -1,4 +1,4 @@
-# Glove80 Graphite Layout
+# Glove80 Layout
 
 Full keyboard layouts, including disabled keys and both thumb rows.
 
