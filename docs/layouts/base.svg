@@ -120,10 +120,10 @@
 <rect x="24" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="202" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="23" data-binding="&amp;none">
-<title>Position 23: &amp;none</title>
-<rect x="108" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="146" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="23" data-binding="&amp;kp B">
+<title>Position 23: &amp;kp B</title>
+<rect x="108" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="146" y="202" fill="#f1f5f9" font-size="18">B</text>
 </g>
 <g data-position="24" data-binding="&amp;kp L">
 <title>Position 24: &amp;kp L</title>
@@ -165,10 +165,10 @@
 <rect x="1368" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1406" y="202" fill="#f1f5f9" font-size="18">U</text>
 </g>
-<g data-position="32" data-binding="&amp;none">
-<title>Position 32: &amp;none</title>
-<rect x="1452" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1490" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="32" data-binding="&amp;kp J">
+<title>Position 32: &amp;kp J</title>
+<rect x="1452" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="1490" y="202" fill="#f1f5f9" font-size="18">J</text>
 </g>
 <g data-position="33" data-binding="&amp;none">
 <title>Position 33: &amp;none</title>
@@ -180,10 +180,10 @@
 <rect x="24" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="62" y="262" fill="#f1f5f9" font-size="18">Esc</text>
 </g>
-<g data-position="35" data-binding="&amp;kp B">
-<title>Position 35: &amp;kp B</title>
+<g data-position="35" data-binding="&amp;kp N">
+<title>Position 35: &amp;kp N</title>
 <rect x="108" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="262" fill="#f1f5f9" font-size="18">B</text>
+<text x="146" y="262" fill="#f1f5f9" font-size="18">N</text>
 </g>
 <g data-position="36" data-binding="&amp;kp R">
 <title>Position 36: &amp;kp R</title>
@@ -225,10 +225,10 @@
 <rect x="1368" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1406" y="262" fill="#f1f5f9" font-size="18">E</text>
 </g>
-<g data-position="44" data-binding="&amp;kp J">
-<title>Position 44: &amp;kp J</title>
+<g data-position="44" data-binding="&amp;kp I">
+<title>Position 44: &amp;kp I</title>
 <rect x="1452" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1490" y="262" fill="#f1f5f9" font-size="18">J</text>
+<text x="1490" y="262" fill="#f1f5f9" font-size="18">I</text>
 </g>
 <g data-position="45" data-binding="&amp;kp LS(RET)">
 <title>Position 45: &amp;kp LS(RET)</title>
@@ -240,10 +240,10 @@
 <rect x="24" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="62" y="322" fill="#f1f5f9" font-size="18">Shift</text>
 </g>
-<g data-position="47" data-binding="&amp;kp N">
-<title>Position 47: &amp;kp N</title>
+<g data-position="47" data-binding="&amp;kp Q">
+<title>Position 47: &amp;kp Q</title>
 <rect x="108" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="322" fill="#f1f5f9" font-size="18">N</text>
+<text x="146" y="322" fill="#f1f5f9" font-size="18">Q</text>
 </g>
 <g data-position="48" data-binding="&amp;kp X">
 <title>Position 48: &amp;kp X</title>
@@ -315,10 +315,10 @@
 <rect x="1368" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1406" y="322" fill="#f1f5f9" font-size="18">. / !</text>
 </g>
-<g data-position="62" data-binding="&amp;kp I">
-<title>Position 62: &amp;kp I</title>
+<g data-position="62" data-binding="&amp;slash_bslash">
+<title>Position 62: &amp;slash_bslash</title>
 <rect x="1452" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1490" y="322" fill="#f1f5f9" font-size="18">I</text>
+<text x="1490" y="322" fill="#f1f5f9" font-size="18">/ / \</text>
 </g>
 <g data-position="63" data-binding="&amp;kp PG_UP">
 <title>Position 63: &amp;kp PG_UP</title>
@@ -330,15 +330,15 @@
 <rect x="24" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="382" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="65" data-binding="&amp;kp Q">
-<title>Position 65: &amp;kp Q</title>
+<g data-position="65" data-binding="&amp;kp HOME">
+<title>Position 65: &amp;kp HOME</title>
 <rect x="108" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="382" fill="#f1f5f9" font-size="18">Q</text>
+<text x="146" y="382" fill="#f1f5f9" font-size="18">Home</text>
 </g>
-<g data-position="66" data-binding="&amp;none">
-<title>Position 66: &amp;none</title>
-<rect x="192" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="230" y="382" fill="#64748b" font-size="18">—</text>
+<g data-position="66" data-binding="&amp;kp END">
+<title>Position 66: &amp;kp END</title>
+<rect x="192" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="230" y="382" fill="#f1f5f9" font-size="18">End</text>
 </g>
 <g data-position="67" data-binding="&amp;none">
 <title>Position 67: &amp;none</title>
@@ -395,10 +395,10 @@
 <rect x="1368" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="1406" y="382" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="78" data-binding="&amp;slash_bslash">
-<title>Position 78: &amp;slash_bslash</title>
-<rect x="1452" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1490" y="382" fill="#f1f5f9" font-size="18">/ / \</text>
+<g data-position="78" data-binding="&amp;none">
+<title>Position 78: &amp;none</title>
+<rect x="1452" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="382" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="79" data-binding="&amp;kp PG_DN">
 <title>Position 79: &amp;kp PG_DN</title>

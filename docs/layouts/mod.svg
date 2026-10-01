@@ -120,10 +120,10 @@
 <rect x="24" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="202" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="23" data-binding="&amp;none">
-<title>Position 23: &amp;none</title>
-<rect x="108" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="146" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="23" data-binding="&amp;kp LG(LBKT)">
+<title>Position 23: &amp;kp LG(LBKT)</title>
+<rect x="108" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="146" y="202" fill="#f1f5f9" font-size="18">Cmd+[</text>
 </g>
 <g data-position="24" data-binding="&amp;kp LC(TAB)">
 <title>Position 24: &amp;kp LC(TAB)</title>
@@ -165,10 +165,10 @@
 <rect x="1368" y="172" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
 <text x="1406" y="202" fill="#a5f3fc" font-size="18">·</text>
 </g>
-<g data-position="32" data-binding="&amp;none">
-<title>Position 32: &amp;none</title>
-<rect x="1452" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1490" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="32" data-binding="&amp;trans">
+<title>Position 32: &amp;trans</title>
+<rect x="1452" y="172" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="1490" y="202" fill="#a5f3fc" font-size="18">·</text>
 </g>
 <g data-position="33" data-binding="&amp;none">
 <title>Position 33: &amp;none</title>
@@ -180,10 +180,10 @@
 <rect x="24" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="62" y="262" fill="#f1f5f9" font-size="18">Esc</text>
 </g>
-<g data-position="35" data-binding="&amp;kp LG(LBKT)">
-<title>Position 35: &amp;kp LG(LBKT)</title>
+<g data-position="35" data-binding="&amp;hm LSHFT LSHFT">
+<title>Position 35: &amp;hm LSHFT LSHFT</title>
 <rect x="108" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="262" fill="#f1f5f9" font-size="18">Cmd+[</text>
+<text x="146" y="262" fill="#f1f5f9" font-size="18">Shift*</text>
 </g>
 <g data-position="36" data-binding="&amp;hm LALT LALT">
 <title>Position 36: &amp;hm LALT LALT</title>
@@ -225,10 +225,10 @@
 <rect x="1368" y="232" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
 <text x="1406" y="262" fill="#a5f3fc" font-size="18">·</text>
 </g>
-<g data-position="44" data-binding="&amp;trans">
-<title>Position 44: &amp;trans</title>
-<rect x="1452" y="232" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
-<text x="1490" y="262" fill="#a5f3fc" font-size="18">·</text>
+<g data-position="44" data-binding="&amp;tmx">
+<title>Position 44: &amp;tmx</title>
+<rect x="1452" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="1490" y="262" fill="#f1f5f9" font-size="18">TMX</text>
 </g>
 <g data-position="45" data-binding="&amp;trans">
 <title>Position 45: &amp;trans</title>
@@ -240,10 +240,10 @@
 <rect x="24" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="322" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="47" data-binding="&amp;hm LSHFT LSHFT">
-<title>Position 47: &amp;hm LSHFT LSHFT</title>
+<g data-position="47" data-binding="&amp;kp LG(RBKT)">
+<title>Position 47: &amp;kp LG(RBKT)</title>
 <rect x="108" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="322" fill="#f1f5f9" font-size="18">Shift*</text>
+<text x="146" y="322" fill="#f1f5f9" font-size="18">Cmd+]</text>
 </g>
 <g data-position="48" data-binding="&amp;kp LG(X)">
 <title>Position 48: &amp;kp LG(X)</title>
@@ -315,10 +315,10 @@
 <rect x="1368" y="292" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
 <text x="1406" y="322" fill="#a5f3fc" font-size="18">·</text>
 </g>
-<g data-position="62" data-binding="&amp;tmx">
-<title>Position 62: &amp;tmx</title>
-<rect x="1452" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1490" y="322" fill="#f1f5f9" font-size="18">TMX</text>
+<g data-position="62" data-binding="&amp;trans">
+<title>Position 62: &amp;trans</title>
+<rect x="1452" y="292" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="1490" y="322" fill="#a5f3fc" font-size="18">·</text>
 </g>
 <g data-position="63" data-binding="&amp;none">
 <title>Position 63: &amp;none</title>
@@ -330,10 +330,10 @@
 <rect x="24" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="382" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="65" data-binding="&amp;kp LG(RBKT)">
-<title>Position 65: &amp;kp LG(RBKT)</title>
-<rect x="108" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="382" fill="#f1f5f9" font-size="18">Cmd+]</text>
+<g data-position="65" data-binding="&amp;none">
+<title>Position 65: &amp;none</title>
+<rect x="108" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="382" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="66" data-binding="&amp;none">
 <title>Position 66: &amp;none</title>
@@ -395,10 +395,10 @@
 <rect x="1368" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="1406" y="382" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="78" data-binding="&amp;trans">
-<title>Position 78: &amp;trans</title>
-<rect x="1452" y="352" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
-<text x="1490" y="382" fill="#a5f3fc" font-size="18">·</text>
+<g data-position="78" data-binding="&amp;none">
+<title>Position 78: &amp;none</title>
+<rect x="1452" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1490" y="382" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="79" data-binding="&amp;none">
 <title>Position 79: &amp;none</title>

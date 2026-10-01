@@ -180,10 +180,10 @@
 <rect x="24" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="262" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="35" data-binding="&amp;none">
-<title>Position 35: &amp;none</title>
-<rect x="108" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="146" y="262" fill="#64748b" font-size="18">—</text>
+<g data-position="35" data-binding="&amp;bt BT_PRV">
+<title>Position 35: &amp;bt BT_PRV</title>
+<rect x="108" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="146" y="262" fill="#f1f5f9" font-size="14">BT Prev</text>
 </g>
 <g data-position="36" data-binding="&amp;bt BT_SEL 1">
 <title>Position 36: &amp;bt BT_SEL 1</title>
@@ -240,10 +240,10 @@
 <rect x="24" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="62" y="322" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="47" data-binding="&amp;bt BT_PRV">
-<title>Position 47: &amp;bt BT_PRV</title>
-<rect x="108" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="146" y="322" fill="#f1f5f9" font-size="14">BT Prev</text>
+<g data-position="47" data-binding="&amp;none">
+<title>Position 47: &amp;none</title>
+<rect x="108" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="146" y="322" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="48" data-binding="&amp;bt BT_SEL 4">
 <title>Position 48: &amp;bt BT_SEL 4</title>
