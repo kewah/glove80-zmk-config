@@ -113,12 +113,12 @@ class Glove80KeymapTests(unittest.TestCase):
 
     def test_rgb_controls_have_vertical_increase_decrease_pairs(self):
         rgb = self.layers["RGB"]
-        for position, increase, decrease in (
-            (29, "HUI", "HUD"), (30, "SAI", "SAD"),
-            (31, "BRI", "BRD"), (32, "SPI", "SPD"),
+        for upper, lower, increase, decrease in (
+            (29, 41, "HUI", "HUD"), (30, 42, "SAI", "SAD"),
+            (31, 43, "BRI", "BRD"), (44, 62, "SPI", "SPD"),
         ):
-            self.assertEqual(rgb[position], f"&rgb_ug RGB_{increase}")
-            self.assertEqual(rgb[position + 12], f"&rgb_ug RGB_{decrease}")
+            self.assertEqual(rgb[upper], f"&rgb_ug RGB_{increase}")
+            self.assertEqual(rgb[lower], f"&rgb_ug RGB_{decrease}")
         self.assertEqual(rgb[28], "&rgb_ug RGB_TOG")
         self.assertEqual(rgb[40], "&rgb_ug RGB_STATUS")
         self.assertEqual(rgb[59:61], ["&rgb_ug RGB_EFR", "&rgb_ug RGB_EFF"])
@@ -152,14 +152,60 @@ class Glove80KeymapTests(unittest.TestCase):
             self.assertEqual(self.layers[name][73], "&trans")
         self.assertEqual(self.layers["SYM"][45], "&kp LBRC")
 
-    def test_navigation_moves_from_ext_to_base_factory_positions(self):
+    def test_base_pinky_columns_are_lowered_one_row(self):
+        base = self.layers["BASE"]
         for position, binding in {
-            65: "&kp HOME", 66: "&kp END", 63: "&kp PG_UP", 79: "&kp PG_DN",
+            35: "&kp B", 47: "&kp N", 65: "&kp Q",
+            44: "&kp J", 62: "&kp I", 78: "&slash_bslash",
+        }.items():
+            with self.subTest(position=position):
+                self.assertEqual(base[position], binding)
+                self.assertEqual(base.count(binding), 1)
+        for position in (23, 32, 66):
+            self.assertEqual(base[position], "&none")
+        self.assertNotIn("&kp HOME", base)
+        self.assertNotIn("&kp END", base)
+
+    def test_other_layers_follow_the_lowered_pinky_columns(self):
+        # Positions now occupied by BASE B/N/Q and J/I/slash, respectively.
+        positions = (35, 47, 65, 44, 62, 78)
+        expected = {
+            "MOD": ["&kp LG(LBKT)", "&hm LSHFT LSHFT", "&kp LG(RBKT)",
+                    "&trans", "&tmx", "&trans"],
+            "EXT": ["&kp LG(LBKT)", "&sk LSHFT", "&kp LG(RBKT)",
+                    "&none", "&tmx", "&none"],
+            "SYM": ["&none", "&sk LSHFT", "&none",
+                    "&kp DLLR", "&kp COLON", "&kp SEMI"],
+            "NUM": ["&kp FSLH", "&kp MINUS", "&kp COLON",
+                    "&none", "&sk LSHFT", "&none"],
+            "FN": ["&none"] * 6,
+            "BT": ["&none", "&bt BT_PRV", "&none", "&none", "&none", "&none"],
+            "RGB": ["&none", "&none", "&none",
+                    "&rgb_ug RGB_SPI", "&rgb_ug RGB_SPD", "&none"],
+        }
+        for name, bindings in expected.items():
+            with self.subTest(layer=name):
+                self.assertEqual([self.layers[name][position] for position in positions],
+                                 bindings)
+        for name, bindings in self.layers.items():
+            with self.subTest(layer=name):
+                for position in (23, 32):
+                    self.assertEqual(bindings[position], "&none")
+        left_shift = self.layers["BASE"].index("&kp N")
+        right_shift = self.layers["BASE"].index("&kp I")
+        self.assertEqual(self.layers["MOD"][left_shift], "&hm LSHFT LSHFT")
+        for name in ("EXT", "SYM"):
+            self.assertEqual(self.layers[name][left_shift], "&sk LSHFT")
+        self.assertEqual(self.layers["NUM"][right_shift], "&sk LSHFT")
+
+    def test_page_navigation_stays_on_base_factory_positions(self):
+        for position, binding in {
+            63: "&kp PG_UP", 79: "&kp PG_DN",
         }.items():
             with self.subTest(binding=binding):
                 self.assertEqual(self.layers["BASE"][position], binding)
                 self.assertNotIn(binding, self.layers["EXT"])
-        for position in (29, 30, 32, 62):
+        for position in (29, 30, 32, 44):
             self.assertEqual(self.layers["EXT"][position], "&none")
 
     def test_num_decimal_and_equal_on_factory_left_side_arrows(self):
@@ -247,10 +293,11 @@ class Glove80KeymapTests(unittest.TestCase):
         definitions = normalize(self.keymap.split("    keymap {")[0])
         self.assertEqual(definitions, self.baseline["definitions"])
 
-    def test_swappers_ignore_the_left_home_shift(self):
+    def test_swappers_ignore_the_lowered_left_home_shift(self):
         ignored = re.findall(r"ignored-key-positions = <(.*?)>;", self.keymap)
-        self.assertEqual(ignored, ["35", "35"])
-        self.assertEqual(self.layers["EXT"][35], "&sk LSHFT")
+        shift_position = self.layers["EXT"].index("&sk LSHFT")
+        self.assertEqual(shift_position, 47)
+        self.assertEqual(ignored, [str(shift_position)] * 2)
 
     def test_glove80_hardware_configuration(self):
         self.assertNotIn("sensor-bindings", self.keymap)
