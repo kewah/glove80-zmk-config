@@ -19,7 +19,7 @@ ROWS = [
 ]
 
 KEY_LABELS = {
-    "LSHFT": "Shift", "LALT": "Alt", "RALT": "RAlt", "LCTRL": "Ctrl",
+    "LSHFT": "Shift", "LALT": "Alt", "RALT": "Dictation", "LCTRL": "Ctrl",
     "LGUI": "Cmd", "HYPER_MOD": "Hyper", "ESC": "Esc", "RET": "Enter",
     "SPACE": "Space", "TAB": "Tab", "DEL": "Del", "BSPC": "Bksp",
     "HOME": "Home", "END": "End", "PG_UP": "PgUp", "PG_DN": "PgDn",

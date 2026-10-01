@@ -1,7 +1,7 @@
 // Glove80 Graphite layout.
 // Alpha rows use the inner five columns of physical rows 3, 4, and 5.
 // Escape and Shift remain beside the left home and bottom alpha rows.
-// BASE adds media controls on factory F1-F8 and Right Alt on factory 6.
+// BASE adds media controls on factory F1-F8 and Dictation (Right Alt) below P.
 // BASE sends Alt+Backspace on factory left-side Right; Left remains disabled.
 // Backspace and Enter use the thumbs; EXT/MOD + Enter sends Shift+Enter.
 // BASE also sends Shift+Enter on the factory right-side apostrophe/double-quote key.
@@ -170,16 +170,16 @@
             bindings = <
                 // Factory F1-F8: brightness, volume, and playback controls
                 &kp C_BRI_DN            &kp C_BRI_UP            &kp C_MUTE              &kp C_VOL_DN            &kp C_VOL_UP                                                                                                                                                                                        &kp C_PREV              &kp C_PP                &kp C_NEXT              &none                   &none
-                // Number row: Right Alt on factory 6
-                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &kp RALT                &none                   &none                   &none                   &none                   &none
+                // Number row (unused)
+                &none                   &none                   &none                   &none                   &none                   &none                                                                                                                                                                       &none                   &none                   &none                   &none                   &none                   &none
                 // Alpha top
                 &none                   &kp B                   &kp L                   &kp D                   &kp W                   &kp Z                                                                                                                                                                       &apo_dquote             &kp F                   &kp O                   &kp U                   &kp J                   &none
                 // Alpha home
                 &kp ESC                 &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &kp LS(RET)
                 // Alpha bottom + upper thumbs
                 &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &sticky_layer SYM       &none                   &mo RGB                 &mo BT                  &none                   &sticky_layer NUM       &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
-                // Extra bottom row: factory Home/End/PgDn, Alt+Backspace on Right + lower thumbs
-                &none                   &kp HOME                &kp END                 &none                   &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &none                   &none                   &none                   &none                   &kp PG_DN
+                // Extra bottom row: factory Home/End/PgDn, Alt+Backspace on Right, Dictation below P + lower thumbs
+                &none                   &kp HOME                &kp END                 &none                   &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &kp RALT                &none                   &none                   &none                   &kp PG_DN
             >;
         };
 

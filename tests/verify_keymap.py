@@ -84,10 +84,19 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertNotIn("backspace_delete", self.keymap)
         self.assertEqual(self.layers["EXT"][60], "&kp DEL")
 
-    def test_right_alt_on_factory_six_not_thumbs(self):
+    def test_dictation_below_p_not_thumbs(self):
         base = self.layers["BASE"]
-        self.assertEqual(base[16], "&kp RALT")
-        self.assertEqual(base[75], "&none")
+        self.assertEqual(base[16], "&none")
+        self.assertEqual(base[59], "&kp P")
+        self.assertEqual(base[75], "&kp RALT")
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        p = svg.find('.//svg:g[@data-position="59"]/svg:rect', ns)
+        dictation = svg.find('.//svg:g[@data-position="75"]', ns)
+        rect = dictation.find("svg:rect", ns)
+        self.assertEqual(rect.get("x"), p.get("x"))
+        self.assertEqual(int(rect.get("y")), int(p.get("y")) + 60)
+        self.assertEqual(dictation.find("svg:text", ns).text, "Dictation")
         self.assertEqual(base.count("&kp RALT"), 1)
         self.assertNotIn("&kp RALT", base[52:58] + base[69:75])
         self.assertEqual(self.layers["EXT"][28], "&none")

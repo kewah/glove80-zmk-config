@@ -9,7 +9,6 @@
       "5": "&kp C_PREV",
       "6": "&kp C_PP",
       "7": "&kp C_NEXT",
-      "16": "&kp RALT",
       "23": "&kp B",
       "24": "&kp L",
       "25": "&kp D",
@@ -56,6 +55,7 @@
       "72": "&mo FN",
       "73": "&kp RET",
       "74": "&kp SPACE",
+      "75": "&kp RALT",
       "79": "&kp PG_DN"
     },
     "MOD": {
