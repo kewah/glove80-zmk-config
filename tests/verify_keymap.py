@@ -138,9 +138,10 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(base.count("&kp BSPC"), 1)
         self.assertEqual(self.layers["FN"][67:69], ["&kp F11", "&kp F12"])
 
-    def test_enter_and_shift_enter_restored_to_thumbs(self):
+    def test_enter_on_thumb_and_shift_enter_on_factory_apostrophe(self):
         base = self.layers["BASE"]
-        self.assertEqual(base[45], "&none")
+        self.assertEqual(base[45], "&kp LS(RET)")
+        self.assertEqual(base.count("&kp LS(RET)"), 1)
         self.assertEqual(base[73], "&kp RET")
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):

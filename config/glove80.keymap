@@ -4,6 +4,7 @@
 // BASE adds media controls on factory F1-F8 and Right Alt on factory 6.
 // BASE sends Alt+Backspace on factory left-side Right; Left remains disabled.
 // Backspace and Enter use the thumbs; EXT/MOD + Enter sends Shift+Enter.
+// BASE also sends Shift+Enter on the factory right-side apostrophe/double-quote key.
 // BASE keeps Home/End and Page Up/Down at their factory positions.
 // NUM and FN use the extra left bottom row.
 // All other additional finger keys and unused thumbs are disabled.
@@ -174,7 +175,7 @@
                 // Alpha top
                 &none                   &kp B                   &kp L                   &kp D                   &kp W                   &kp Z                                                                                                                                                                       &apo_dquote             &kp F                   &kp O                   &kp U                   &kp J                   &none
                 // Alpha home
-                &kp ESC                 &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &none
+                &kp ESC                 &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &kp LS(RET)
                 // Alpha bottom + upper thumbs
                 &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &sticky_layer SYM       &none                   &mo RGB                 &mo BT                  &none                   &sticky_layer NUM       &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
                 // Extra bottom row: factory Home/End/PgDn, Alt+Backspace on Right + lower thumbs
