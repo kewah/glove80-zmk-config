@@ -115,10 +115,10 @@
 <rect x="1536" y="112" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="1574" y="142" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="22" data-binding="&amp;none">
-<title>Position 22: &amp;none</title>
-<rect x="24" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="62" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="22" data-binding="&amp;kp LG(GRAVE)">
+<title>Position 22: &amp;kp LG(GRAVE)</title>
+<rect x="24" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="62" y="202" fill="#f1f5f9" font-size="18">Cmd+`</text>
 </g>
 <g data-position="23" data-binding="&amp;kp LG(LBKT)">
 <title>Position 23: &amp;kp LG(LBKT)</title>
@@ -175,10 +175,10 @@
 <rect x="1536" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="1574" y="202" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="34" data-binding="&amp;kp LG(GRAVE)">
-<title>Position 34: &amp;kp LG(GRAVE)</title>
-<rect x="24" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="62" y="262" fill="#f1f5f9" font-size="18">Cmd+`</text>
+<g data-position="34" data-binding="&amp;trans">
+<title>Position 34: &amp;trans</title>
+<rect x="24" y="232" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="62" y="262" fill="#a5f3fc" font-size="18">·</text>
 </g>
 <g data-position="35" data-binding="&amp;sk LSHFT">
 <title>Position 35: &amp;sk LSHFT</title>
@@ -230,10 +230,10 @@
 <rect x="1452" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1490" y="262" fill="#f1f5f9" font-size="18">TMX</text>
 </g>
-<g data-position="45" data-binding="&amp;none">
-<title>Position 45: &amp;none</title>
-<rect x="1536" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1574" y="262" fill="#64748b" font-size="18">—</text>
+<g data-position="45" data-binding="&amp;trans">
+<title>Position 45: &amp;trans</title>
+<rect x="1536" y="232" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
+<text x="1574" y="262" fill="#a5f3fc" font-size="18">·</text>
 </g>
 <g data-position="46" data-binding="&amp;none">
 <title>Position 46: &amp;none</title>

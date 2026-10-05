@@ -76,6 +76,35 @@ class Glove80KeymapTests(unittest.TestCase):
                     expected = "&bt BT_SEL 0"
                 self.assertEqual(self.layers[name][position], expected)
 
+    def test_sym_num_triggers_on_home_row_and_displaced_keys_above(self):
+        base = self.layers["BASE"]
+        self.assertEqual(base[34], "&sticky_layer SYM")
+        self.assertEqual(base[45], "&sticky_layer NUM")
+        self.assertEqual(base.count("&sticky_layer SYM"), 2)
+        self.assertEqual(base.count("&sticky_layer NUM"), 2)
+        self.assertEqual(base[52], base[34])
+        self.assertEqual(base[57], base[45])
+        for name in ("MOD", "EXT", "SYM", "NUM", "FN"):
+            self.assertEqual(self.layers[name][52], "&trans")
+            self.assertEqual(self.layers[name][57], "&trans")
+        self.assertEqual(base[22], "&kp ESC")
+        self.assertEqual(base.count("&kp ESC"), 1)
+        self.assertEqual(base[33], "&kp LS(RET)")
+        self.assertEqual(self.layers["MOD"][22], "&kp ESC")
+        self.assertEqual(self.layers["EXT"][22], "&kp LG(GRAVE)")
+        for name in ("MOD", "EXT", "FN"):
+            self.assertEqual(self.layers[name][34], "&trans")
+            self.assertEqual(self.layers[name][45], "&trans")
+        self.assertEqual(self.layers["SYM"][34], "&trans")
+        self.assertEqual(self.layers["NUM"][45], "&trans")
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        for above, trigger in ((22, 34), (33, 45)):
+            top = svg.find(f'.//svg:g[@data-position="{above}"]/svg:rect', ns)
+            bottom = svg.find(f'.//svg:g[@data-position="{trigger}"]/svg:rect', ns)
+            self.assertEqual(top.get("x"), bottom.get("x"))
+            self.assertEqual(int(top.get("y")) + 60, int(bottom.get("y")))
+
     def test_backspace_is_plain_and_delete_remains_on_ext(self):
         for name in ("BASE", "SYM", "NUM"):
             self.assertEqual(self.layers[name][70], "&kp BSPC")
@@ -147,16 +176,17 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(base.count("&kp BSPC"), 1)
         self.assertEqual(self.layers["FN"][67:69], ["&kp F11", "&kp F12"])
 
-    def test_enter_on_thumb_and_shift_enter_on_factory_apostrophe(self):
+    def test_enter_on_thumb_and_shift_enter_above_num(self):
         base = self.layers["BASE"]
-        self.assertEqual(base[45], "&kp LS(RET)")
+        self.assertEqual(base[33], "&kp LS(RET)")
         self.assertEqual(base.count("&kp LS(RET)"), 1)
         self.assertEqual(base[73], "&kp RET")
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):
             self.assertEqual(self.layers[name][73], "&kp LS(RET)")
-        self.assertEqual(self.layers["EXT"][45], "&none")
+        self.assertEqual(self.layers["EXT"][45], "&trans")
         self.assertEqual(self.layers["MOD"][45], "&trans")
+        self.assertEqual(self.layers["MOD"][33], "&trans")
         for name in ("SYM", "NUM", "FN"):
             self.assertEqual(self.layers[name][73], "&trans")
         self.assertEqual(self.layers["SYM"][45], "&kp LBRC")
@@ -179,9 +209,9 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(num.count("&kp DOT"), 1)
         self.assertEqual(num.count("&kp EQUAL"), 1)
 
-    def test_num_underscore_on_base_escape_position(self):
+    def test_num_underscore_stays_on_left_home_outer_key(self):
         num = self.layers["NUM"]
-        position = self.layers["BASE"].index("&kp ESC")
+        position = 34
         self.assertEqual(num[position], "&kp UNDER")
         self.assertEqual(num[58], "&none")
         self.assertEqual(num.count("&kp UNDER"), 1)

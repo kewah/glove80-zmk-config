@@ -9,6 +9,8 @@ Full keyboard layouts, including disabled keys and both thumb rows.
 
 ## BASE
 
+SYM/NUM: tap for sticky activation; hold for momentary activation.
+
 ![BASE layout](docs/layouts/base.svg)
 
 ## MOD
