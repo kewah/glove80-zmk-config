@@ -94,7 +94,8 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(self.layers["EXT"][22], "&kp LG(GRAVE)")
         for name in ("MOD", "EXT", "FN"):
             self.assertEqual(self.layers[name][34], "&trans")
-            self.assertEqual(self.layers[name][45], "&trans")
+            expected = "&trans" if name == "FN" else "&kp ESC"
+            self.assertEqual(self.layers[name][45], expected)
         self.assertEqual(self.layers["SYM"][34], "&trans")
         self.assertEqual(self.layers["NUM"][45], "&trans")
         ns = {"svg": "http://www.w3.org/2000/svg"}
@@ -104,6 +105,13 @@ class Glove80KeymapTests(unittest.TestCase):
             bottom = svg.find(f'.//svg:g[@data-position="{trigger}"]/svg:rect', ns)
             self.assertEqual(top.get("x"), bottom.get("x"))
             self.assertEqual(int(top.get("y")) + 60, int(bottom.get("y")))
+
+    def test_ext_mod_escape_on_base_num_trigger_next_to_i(self):
+        self.assertEqual(self.layers["BASE"][44:46], ["&kp I", "&sticky_layer NUM"])
+        for name in ("EXT", "MOD"):
+            with self.subTest(layer=name):
+                self.assertEqual(self.layers[name][45], "&kp ESC")
+                self.assertEqual(self.layers[name][57], "&trans")
 
     def test_backspace_is_plain_and_delete_remains_on_ext(self):
         for name in ("BASE", "SYM", "NUM"):
@@ -184,8 +192,8 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):
             self.assertEqual(self.layers[name][73], "&kp LS(RET)")
-        self.assertEqual(self.layers["EXT"][45], "&trans")
-        self.assertEqual(self.layers["MOD"][45], "&trans")
+        self.assertEqual(self.layers["EXT"][45], "&kp ESC")
+        self.assertEqual(self.layers["MOD"][45], "&kp ESC")
         self.assertEqual(self.layers["MOD"][33], "&trans")
         for name in ("SYM", "NUM", "FN"):
             self.assertEqual(self.layers[name][73], "&trans")
