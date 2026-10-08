@@ -9,7 +9,7 @@ Full keyboard layouts, including disabled keys and both thumb rows.
 
 ## BASE
 
-SYM/NUM: tap for sticky activation; hold for momentary activation.
+SYM/NUM use the pinky columns beside the home row: tap for sticky activation; hold for momentary activation. Their former thumb keys are disabled.
 
 ![BASE layout](docs/layouts/base.svg)
 

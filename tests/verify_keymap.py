@@ -50,18 +50,17 @@ class Glove80KeymapTests(unittest.TestCase):
     def test_thumb_bindings(self):
         base = self.layers["BASE"]
         self.assertEqual(base[52:58], [
-            "&sticky_layer SYM", "&none", "&mo RGB",
-            "&mo BT", "&none", "&sticky_layer NUM",
+            "&none", "&none", "&mo RGB",
+            "&mo BT", "&none", "&none",
         ])
         self.assertEqual(base[69:75], [
             "&ext_mod EXT MOD", "&kp BSPC", "&none",
             "&mo FN", "&kp RET", "&kp SPACE",
         ])
-        self.assertEqual(self.layers["NUM"][52], "&trans")
         self.assertEqual(self.layers["NUM"][69], "&kp N0")
         for name, bindings in self.layers.items():
             with self.subTest(layer=name):
-                for position in (53, 56, 71):
+                for position in (52, 53, 56, 57, 71):
                     self.assertEqual(bindings[position], "&none")
                 expected_rgb = {"BASE": "&mo RGB", "RGB": "&trans"}.get(name, "&none")
                 expected_bt = {"BASE": "&mo BT", "BT": "&trans"}.get(name, "&none")
@@ -76,17 +75,12 @@ class Glove80KeymapTests(unittest.TestCase):
                     expected = "&bt BT_SEL 0"
                 self.assertEqual(self.layers[name][position], expected)
 
-    def test_sym_num_triggers_on_home_row_and_escape_above_sym(self):
+    def test_sym_num_triggers_only_on_pinky_columns_and_escape_above_sym(self):
         base = self.layers["BASE"]
         self.assertEqual(base[34], "&sticky_layer SYM")
         self.assertEqual(base[45], "&sticky_layer NUM")
-        self.assertEqual(base.count("&sticky_layer SYM"), 2)
-        self.assertEqual(base.count("&sticky_layer NUM"), 2)
-        self.assertEqual(base[52], base[34])
-        self.assertEqual(base[57], base[45])
-        for name in ("MOD", "EXT", "SYM", "NUM", "FN"):
-            self.assertEqual(self.layers[name][52], "&trans")
-            self.assertEqual(self.layers[name][57], "&trans")
+        self.assertEqual(base.count("&sticky_layer SYM"), 1)
+        self.assertEqual(base.count("&sticky_layer NUM"), 1)
         self.assertEqual(base[22], "&kp ESC")
         self.assertEqual(base.count("&kp ESC"), 1)
         self.assertEqual(base[33], "&none")
@@ -117,7 +111,7 @@ class Glove80KeymapTests(unittest.TestCase):
         for name in ("EXT", "MOD"):
             with self.subTest(layer=name):
                 self.assertEqual(self.layers[name][45], "&kp ESC")
-                self.assertEqual(self.layers[name][57], "&trans")
+                self.assertEqual(self.layers[name][57], "&none")
 
     def test_backspace_is_plain_and_delete_remains_on_ext(self):
         for name in ("BASE", "SYM", "NUM"):
@@ -225,7 +219,7 @@ class Glove80KeymapTests(unittest.TestCase):
     def test_num_decimal_and_equal_on_factory_left_side_arrows(self):
         num = self.layers["NUM"]
         self.assertEqual(num[67:69], ["&kp DOT", "&kp EQUAL"])
-        self.assertEqual(num[52], "&trans")
+        self.assertEqual(num[52], "&none")
         self.assertEqual(num[59], "&none")
         self.assertEqual(num.count("&kp DOT"), 1)
         self.assertEqual(num.count("&kp EQUAL"), 1)

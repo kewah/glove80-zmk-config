@@ -265,10 +265,10 @@
 <rect x="444" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="482" y="322" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="52" data-binding="&amp;trans">
-<title>Position 52: &amp;trans</title>
-<rect x="528" y="292" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
-<text x="566" y="322" fill="#a5f3fc" font-size="18">·</text>
+<g data-position="52" data-binding="&amp;none">
+<title>Position 52: &amp;none</title>
+<rect x="528" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="566" y="322" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="53" data-binding="&amp;none">
 <title>Position 53: &amp;none</title>
@@ -290,10 +290,10 @@
 <rect x="948" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="986" y="322" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="57" data-binding="&amp;trans">
-<title>Position 57: &amp;trans</title>
-<rect x="1032" y="292" width="76" height="50" rx="8" fill="#153e48" stroke="#4b9caa"/>
-<text x="1070" y="322" fill="#a5f3fc" font-size="18">·</text>
+<g data-position="57" data-binding="&amp;none">
+<title>Position 57: &amp;none</title>
+<rect x="1032" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1070" y="322" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="58" data-binding="&amp;kp UNDER">
 <title>Position 58: &amp;kp UNDER</title>
