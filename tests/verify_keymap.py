@@ -106,6 +106,12 @@ class Glove80KeymapTests(unittest.TestCase):
             self.assertEqual(top.get("x"), bottom.get("x"))
             self.assertEqual(int(top.get("y")) + 60, int(bottom.get("y")))
 
+    def test_ext_mod_escape_on_f(self):
+        self.assertEqual(self.layers["BASE"][29], "&kp F")
+        for name in ("EXT", "MOD"):
+            with self.subTest(layer=name):
+                self.assertEqual(self.layers[name][29], "&kp ESC")
+
     def test_ext_mod_escape_on_base_num_trigger_next_to_i(self):
         self.assertEqual(self.layers["BASE"][44:46], ["&kp I", "&sticky_layer NUM"])
         for name in ("EXT", "MOD"):
@@ -206,7 +212,7 @@ class Glove80KeymapTests(unittest.TestCase):
             with self.subTest(binding=binding):
                 self.assertEqual(self.layers["BASE"][position], binding)
                 self.assertNotIn(binding, self.layers["EXT"])
-        for position in (29, 30, 32, 62):
+        for position in (30, 32, 62):
             self.assertEqual(self.layers["EXT"][position], "&none")
 
     def test_num_decimal_and_equal_on_factory_left_side_arrows(self):

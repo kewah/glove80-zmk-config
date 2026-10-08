@@ -150,10 +150,10 @@
 <rect x="1116" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
 <text x="1154" y="202" fill="#64748b" font-size="18">—</text>
 </g>
-<g data-position="29" data-binding="&amp;none">
-<title>Position 29: &amp;none</title>
-<rect x="1200" y="172" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="1238" y="202" fill="#64748b" font-size="18">—</text>
+<g data-position="29" data-binding="&amp;kp ESC">
+<title>Position 29: &amp;kp ESC</title>
+<rect x="1200" y="172" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="1238" y="202" fill="#f1f5f9" font-size="18">Esc</text>
 </g>
 <g data-position="30" data-binding="&amp;none">
 <title>Position 30: &amp;none</title>
