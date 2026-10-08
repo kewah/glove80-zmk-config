@@ -121,17 +121,17 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertNotIn("backspace_delete", self.keymap)
         self.assertEqual(self.layers["EXT"][60], "&kp DEL")
 
-    def test_dictation_below_p_not_thumbs(self):
+    def test_dictation_right_of_shift_enter_not_thumbs(self):
         base = self.layers["BASE"]
         self.assertEqual(base[16], "&none")
         self.assertEqual(base[59], "&kp P")
-        self.assertEqual(base[75], "&kp RALT")
+        self.assertEqual(base[76], "&kp RALT")
         ns = {"svg": "http://www.w3.org/2000/svg"}
         svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
         p = svg.find('.//svg:g[@data-position="59"]/svg:rect', ns)
-        dictation = svg.find('.//svg:g[@data-position="75"]', ns)
+        dictation = svg.find('.//svg:g[@data-position="76"]', ns)
         rect = dictation.find("svg:rect", ns)
-        self.assertEqual(rect.get("x"), p.get("x"))
+        self.assertEqual(int(rect.get("x")), int(p.get("x")) + 84)
         self.assertEqual(int(rect.get("y")), int(p.get("y")) + 60)
         self.assertEqual(dictation.find("svg:text", ns).text, "Dictation")
         self.assertEqual(base.count("&kp RALT"), 1)
@@ -203,14 +203,14 @@ class Glove80KeymapTests(unittest.TestCase):
     def test_enter_on_thumb_and_shift_enter_next_to_dictation(self):
         base = self.layers["BASE"]
         self.assertEqual(base[33], "&none")
-        self.assertEqual(base[75:77], ["&kp RALT", "&kp LS(RET)"])
+        self.assertEqual(base[75:77], ["&kp LS(RET)", "&kp RALT"])
         self.assertEqual(base.count("&kp LS(RET)"), 1)
         ns = {"svg": "http://www.w3.org/2000/svg"}
         svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
-        dictation = svg.find('.//svg:g[@data-position="75"]/svg:rect', ns)
-        shift_enter = svg.find('.//svg:g[@data-position="76"]/svg:rect', ns)
+        dictation = svg.find('.//svg:g[@data-position="76"]/svg:rect', ns)
+        shift_enter = svg.find('.//svg:g[@data-position="75"]/svg:rect', ns)
         self.assertEqual(shift_enter.get("y"), dictation.get("y"))
-        self.assertEqual(int(shift_enter.get("x")), int(dictation.get("x")) + 84)
+        self.assertEqual(int(dictation.get("x")), int(shift_enter.get("x")) + 84)
         self.assertEqual(base[73], "&kp RET")
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):

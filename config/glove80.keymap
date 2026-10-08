@@ -180,8 +180,8 @@
                 &sticky_layer SYM       &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &sticky_layer NUM
                 // Alpha bottom + upper thumbs
                 &none                   &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &none                   &none                   &mo RGB                 &mo BT                  &none                   &none                   &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
-                // Extra bottom row: Home/End, Caps Word below M, Alt+Backspace, Dictation below P, then Shift+Enter + lower thumbs
-                &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &kp RALT                &kp LS(RET)             &none                   &none                   &kp PG_DN
+                // Extra bottom row: Home/End, Caps Word below M, Alt+Backspace, Shift+Enter below P, then Dictation + lower thumbs
+                &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &kp LS(RET)             &kp RALT                &none                   &none                   &kp PG_DN
             >;
         };
 
