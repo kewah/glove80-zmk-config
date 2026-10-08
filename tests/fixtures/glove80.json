@@ -20,7 +20,6 @@
       "30": "&kp O",
       "31": "&kp U",
       "32": "&kp J",
-      "33": "&kp LS(RET)",
       "34": "&sticky_layer SYM",
       "35": "&kp N",
       "36": "&kp R",
@@ -58,6 +57,7 @@
       "73": "&kp RET",
       "74": "&kp SPACE",
       "75": "&kp RALT",
+      "76": "&kp LS(RET)",
       "79": "&kp PG_DN"
     },
     "MOD": {

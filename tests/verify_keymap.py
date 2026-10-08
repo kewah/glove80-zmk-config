@@ -76,7 +76,7 @@ class Glove80KeymapTests(unittest.TestCase):
                     expected = "&bt BT_SEL 0"
                 self.assertEqual(self.layers[name][position], expected)
 
-    def test_sym_num_triggers_on_home_row_and_displaced_keys_above(self):
+    def test_sym_num_triggers_on_home_row_and_escape_above_sym(self):
         base = self.layers["BASE"]
         self.assertEqual(base[34], "&sticky_layer SYM")
         self.assertEqual(base[45], "&sticky_layer NUM")
@@ -89,7 +89,7 @@ class Glove80KeymapTests(unittest.TestCase):
             self.assertEqual(self.layers[name][57], "&trans")
         self.assertEqual(base[22], "&kp ESC")
         self.assertEqual(base.count("&kp ESC"), 1)
-        self.assertEqual(base[33], "&kp LS(RET)")
+        self.assertEqual(base[33], "&none")
         self.assertEqual(self.layers["MOD"][22], "&kp ESC")
         self.assertEqual(self.layers["EXT"][22], "&kp LG(GRAVE)")
         for name in ("MOD", "EXT", "FN"):
@@ -100,7 +100,7 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(self.layers["NUM"][45], "&trans")
         ns = {"svg": "http://www.w3.org/2000/svg"}
         svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
-        for above, trigger in ((22, 34), (33, 45)):
+        for above, trigger in ((22, 34),):
             top = svg.find(f'.//svg:g[@data-position="{above}"]/svg:rect', ns)
             bottom = svg.find(f'.//svg:g[@data-position="{trigger}"]/svg:rect', ns)
             self.assertEqual(top.get("x"), bottom.get("x"))
@@ -190,10 +190,17 @@ class Glove80KeymapTests(unittest.TestCase):
         self.assertEqual(base.count("&kp BSPC"), 1)
         self.assertEqual(self.layers["FN"][67:69], ["&kp F11", "&kp F12"])
 
-    def test_enter_on_thumb_and_shift_enter_above_num(self):
+    def test_enter_on_thumb_and_shift_enter_next_to_dictation(self):
         base = self.layers["BASE"]
-        self.assertEqual(base[33], "&kp LS(RET)")
+        self.assertEqual(base[33], "&none")
+        self.assertEqual(base[75:77], ["&kp RALT", "&kp LS(RET)"])
         self.assertEqual(base.count("&kp LS(RET)"), 1)
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        dictation = svg.find('.//svg:g[@data-position="75"]/svg:rect', ns)
+        shift_enter = svg.find('.//svg:g[@data-position="76"]/svg:rect', ns)
+        self.assertEqual(shift_enter.get("y"), dictation.get("y"))
+        self.assertEqual(int(shift_enter.get("x")), int(dictation.get("x")) + 84)
         self.assertEqual(base[73], "&kp RET")
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):
