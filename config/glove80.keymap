@@ -1,9 +1,10 @@
 // Glove80 Graphite layout.
 // Alpha rows use the inner five columns of physical rows 3, 4, and 5.
 // SYM/NUM use only the pinky columns beside the home row; Escape sits above SYM.
-// Shift remains beside the left bottom alpha row.
+// Default Caps Word toggles below M, between End and Alt+Backspace.
+// The former pinky Shift beside the left bottom alpha row is disabled.
 // BASE adds media controls on factory F1-F8 and Dictation (Right Alt) below P.
-// BASE sends Alt+Backspace on factory left-side Right; Left remains disabled.
+// BASE sends Alt+Backspace on factory left-side Right; Left toggles Caps Word.
 // Backspace and Enter use the thumbs; EXT/MOD + Enter sends Shift+Enter.
 // BASE sends Shift+Enter on the bottom row immediately right of Dictation.
 // BASE keeps Home/End and Page Up/Down at their factory positions.
@@ -178,9 +179,9 @@
                 // Alpha home
                 &sticky_layer SYM       &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &sticky_layer NUM
                 // Alpha bottom + upper thumbs
-                &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &none                   &none                   &mo RGB                 &mo BT                  &none                   &none                   &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
-                // Extra bottom row: factory Home/End/PgDn, Alt+Backspace on Right, Dictation below P, then Shift+Enter + lower thumbs
-                &none                   &kp HOME                &kp END                 &none                   &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &kp RALT                &kp LS(RET)             &none                   &none                   &kp PG_DN
+                &none                   &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &none                   &none                   &mo RGB                 &mo BT                  &none                   &none                   &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
+                // Extra bottom row: Home/End, Caps Word below M, Alt+Backspace, Dictation below P, then Shift+Enter + lower thumbs
+                &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &kp BSPC                &none                   &mo FN                  &kp RET                 &kp SPACE                                       &kp RALT                &kp LS(RET)             &none                   &none                   &kp PG_DN
             >;
         };
 

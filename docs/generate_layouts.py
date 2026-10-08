@@ -37,7 +37,7 @@ KEY_LABELS = {
 BEHAVIOR_LABELS = {
     "&none": "—", "&trans": "·", "&apo_dquote": "' / \"",
     "&comma_qmark": ", / ?", "&dot_excl": ". / !", "&slash_bslash": "/ / \\",
-    "&ext_mod EXT MOD": "EXT/MOD",
+    "&ext_mod EXT MOD": "EXT/MOD", "&caps_word": "Caps Word",
     "&quick_swap": "QSWAP", "&swapper": "SWAP", "&tab_swapper": "TSWAP",
     "&tmx": "TMX", "&out OUT_USB": "OUT USB", "&out OUT_BLE": "OUT BLE",
     "&rgb_ug RGB_TOG": "RGB On/Off", "&rgb_ug RGB_HUI": "Hue+",

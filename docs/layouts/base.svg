@@ -235,10 +235,10 @@
 <rect x="1536" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1574" y="262" fill="#f1f5f9" font-size="18">NUM</text>
 </g>
-<g data-position="46" data-binding="&amp;kp LSHFT">
-<title>Position 46: &amp;kp LSHFT</title>
-<rect x="24" y="292" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="62" y="322" fill="#f1f5f9" font-size="18">Shift</text>
+<g data-position="46" data-binding="&amp;none">
+<title>Position 46: &amp;none</title>
+<rect x="24" y="292" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="62" y="322" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="47" data-binding="&amp;kp Q">
 <title>Position 47: &amp;kp Q</title>
@@ -340,10 +340,10 @@
 <rect x="192" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="230" y="382" fill="#f1f5f9" font-size="18">End</text>
 </g>
-<g data-position="67" data-binding="&amp;none">
-<title>Position 67: &amp;none</title>
-<rect x="276" y="352" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
-<text x="314" y="382" fill="#64748b" font-size="18">—</text>
+<g data-position="67" data-binding="&amp;caps_word">
+<title>Position 67: &amp;caps_word</title>
+<rect x="276" y="352" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
+<text x="314" y="382" fill="#f1f5f9" font-size="11">Caps Word</text>
 </g>
 <g data-position="68" data-binding="&amp;kp LA(BSPC)">
 <title>Position 68: &amp;kp LA(BSPC)</title>

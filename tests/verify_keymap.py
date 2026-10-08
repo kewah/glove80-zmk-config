@@ -177,9 +177,25 @@ class Glove80KeymapTests(unittest.TestCase):
         ])
         self.assertNotIn("C_STOP", self.keymap)
 
-    def test_alt_backspace_on_factory_right_arrow_and_left_is_empty(self):
+    def test_default_caps_word_below_m_replaces_pinky_shift(self):
         base = self.layers["BASE"]
-        self.assertEqual(base[67:69], ["&none", "&kp LA(BSPC)"])
+        self.assertEqual(base[46], "&none")
+        self.assertEqual(base[66:69], ["&kp END", "&caps_word", "&kp LA(BSPC)"])
+        self.assertEqual(base.count("&caps_word"), 1)
+        self.assertNotIn("&kp LSHFT", base)
+        self.assertNotIn("continue-list", self.keymap)
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        m = svg.find('.//svg:g[@data-position="49"]/svg:rect', ns)
+        caps_word = svg.find('.//svg:g[@data-position="67"]', ns)
+        rect = caps_word.find("svg:rect", ns)
+        self.assertEqual(rect.get("x"), m.get("x"))
+        self.assertEqual(int(rect.get("y")), int(m.get("y")) + 60)
+        self.assertEqual(caps_word.find("svg:text", ns).text, "Caps Word")
+
+    def test_alt_backspace_on_factory_right_arrow(self):
+        base = self.layers["BASE"]
+        self.assertEqual(base[68], "&kp LA(BSPC)")
         self.assertEqual(base.count("&kp LA(BSPC)"), 1)
         self.assertEqual(base.count("&kp BSPC"), 1)
         self.assertEqual(self.layers["FN"][67:69], ["&kp F11", "&kp F12"])
