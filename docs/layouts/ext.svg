@@ -230,10 +230,10 @@
 <rect x="1452" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
 <text x="1490" y="262" fill="#f1f5f9" font-size="18">TMX</text>
 </g>
-<g data-position="45" data-binding="&amp;kp ESC">
-<title>Position 45: &amp;kp ESC</title>
-<rect x="1536" y="232" width="76" height="50" rx="8" fill="#243247" stroke="#52647d"/>
-<text x="1574" y="262" fill="#f1f5f9" font-size="18">Esc</text>
+<g data-position="45" data-binding="&amp;none">
+<title>Position 45: &amp;none</title>
+<rect x="1536" y="232" width="76" height="50" rx="8" fill="#131e31" stroke="#28364b"/>
+<text x="1574" y="262" fill="#64748b" font-size="18">—</text>
 </g>
 <g data-position="46" data-binding="&amp;none">
 <title>Position 46: &amp;none</title>
