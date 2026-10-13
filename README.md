@@ -13,6 +13,15 @@ SYM/NUM use the pinky columns beside the home row: tap for sticky activation; ho
 
 Caps Word sits under M, between End and Alt+Backspace; the former pinky Shift is disabled. Tap to toggle uppercase letters without native Caps Lock. Default ZMK behavior continues through letters, digits, underscore, Backspace, and Delete; Space, Enter, Escape, and other punctuation turn it off. Layer triggers alone do not turn it off.
 
+Thumb rows, ordered **inner → outer** on each hand:
+
+| Hand | Upper row | Lower row |
+| --- | --- | --- |
+| Left | Backspace · disabled · RGB | EXT/MOD · disabled · disabled |
+| Right | Enter · disabled · BT | Space · disabled · Fn |
+
+EXT/MOD + Enter still sends Shift+Enter.
+
 ![BASE layout](docs/layouts/base.svg)
 
 ## MOD

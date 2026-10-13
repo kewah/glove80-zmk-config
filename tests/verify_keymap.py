@@ -50,17 +50,17 @@ class Glove80KeymapTests(unittest.TestCase):
     def test_thumb_bindings(self):
         base = self.layers["BASE"]
         self.assertEqual(base[52:58], [
-            "&none", "&none", "&mo RGB",
-            "&mo BT", "&none", "&none",
+            "&kp BSPC", "&none", "&mo RGB",
+            "&mo BT", "&none", "&kp RET",
         ])
         self.assertEqual(base[69:75], [
-            "&ext_mod EXT MOD", "&kp BSPC", "&none",
-            "&mo FN", "&kp RET", "&kp SPACE",
+            "&ext_mod EXT MOD", "&none", "&none",
+            "&mo FN", "&none", "&kp SPACE",
         ])
         self.assertEqual(self.layers["NUM"][69], "&kp N0")
         for name, bindings in self.layers.items():
             with self.subTest(layer=name):
-                for position in (52, 53, 56, 57, 71):
+                for position in (53, 56, 70, 71, 73):
                     self.assertEqual(bindings[position], "&none")
                 expected_rgb = {"BASE": "&mo RGB", "RGB": "&trans"}.get(name, "&none")
                 expected_bt = {"BASE": "&mo BT", "BT": "&trans"}.get(name, "&none")
@@ -74,6 +74,19 @@ class Glove80KeymapTests(unittest.TestCase):
                 if name == "BT" and position == 69:
                     expected = "&bt BT_SEL 0"
                 self.assertEqual(self.layers[name][position], expected)
+
+    def test_inner_upper_thumbs_are_above_ext_mod_and_space(self):
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        for upper, lower in ((52, 69), (57, 74)):
+            with self.subTest(upper=upper, lower=lower):
+                top = svg.find(f'.//svg:g[@data-position="{upper}"]/svg:rect', ns)
+                bottom = svg.find(f'.//svg:g[@data-position="{lower}"]/svg:rect', ns)
+                self.assertEqual(top.get("x"), bottom.get("x"))
+                self.assertEqual(int(top.get("y")) + 60, int(bottom.get("y")))
+        for name in ("BASE", "MOD", "EXT", "SYM", "NUM", "FN"):
+            expected = "&kp SPACE" if name == "BASE" else "&trans"
+            self.assertEqual(self.layers[name][74], expected)
 
     def test_sym_num_triggers_only_on_pinky_columns_and_escape_above_sym(self):
         base = self.layers["BASE"]
@@ -111,13 +124,13 @@ class Glove80KeymapTests(unittest.TestCase):
         for name in ("EXT", "MOD"):
             with self.subTest(layer=name):
                 self.assertEqual(self.layers[name][45], "&none")
-                self.assertEqual(self.layers[name][57], "&none")
+                self.assertEqual(self.layers[name][57], "&kp LS(RET)")
 
     def test_backspace_is_plain_and_delete_remains_on_ext(self):
         for name in ("BASE", "SYM", "NUM"):
-            self.assertEqual(self.layers[name][70], "&kp BSPC")
+            self.assertEqual(self.layers[name][52], "&kp BSPC")
         for name in ("MOD", "EXT", "FN"):
-            self.assertEqual(self.layers[name][70], "&trans")
+            self.assertEqual(self.layers[name][52], "&trans")
         self.assertNotIn("backspace_delete", self.keymap)
         self.assertEqual(self.layers["EXT"][60], "&kp DEL")
 
@@ -211,15 +224,15 @@ class Glove80KeymapTests(unittest.TestCase):
         shift_enter = svg.find('.//svg:g[@data-position="75"]/svg:rect', ns)
         self.assertEqual(shift_enter.get("y"), dictation.get("y"))
         self.assertEqual(int(dictation.get("x")), int(shift_enter.get("x")) + 84)
-        self.assertEqual(base[73], "&kp RET")
+        self.assertEqual(base[57], "&kp RET")
         self.assertEqual(base.count("&kp RET"), 1)
         for name in ("EXT", "MOD"):
-            self.assertEqual(self.layers[name][73], "&kp LS(RET)")
+            self.assertEqual(self.layers[name][57], "&kp LS(RET)")
         self.assertEqual(self.layers["EXT"][45], "&none")
         self.assertEqual(self.layers["MOD"][45], "&none")
         self.assertEqual(self.layers["MOD"][33], "&trans")
         for name in ("SYM", "NUM", "FN"):
-            self.assertEqual(self.layers[name][73], "&trans")
+            self.assertEqual(self.layers[name][57], "&trans")
         self.assertEqual(self.layers["SYM"][45], "&kp LBRC")
 
     def test_navigation_moves_from_ext_to_base_factory_positions(self):
@@ -235,7 +248,7 @@ class Glove80KeymapTests(unittest.TestCase):
     def test_num_decimal_and_equal_on_factory_left_side_arrows(self):
         num = self.layers["NUM"]
         self.assertEqual(num[67:69], ["&kp DOT", "&kp EQUAL"])
-        self.assertEqual(num[52], "&none")
+        self.assertEqual(num[52], "&kp BSPC")
         self.assertEqual(num[59], "&none")
         self.assertEqual(num.count("&kp DOT"), 1)
         self.assertEqual(num.count("&kp EQUAL"), 1)
