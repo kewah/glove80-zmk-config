@@ -1,7 +1,5 @@
 # Glove80 Layout
 
-Full keyboard layouts, including disabled keys and both thumb rows.
-
 - `—` = disabled; `·` = transparent (uses the lower active layer).
 - `*` = tap for sticky modifier, hold for held modifier; `†` = sticky modifier.
 - `/` separates normal and shifted output.
@@ -9,18 +7,9 @@ Full keyboard layouts, including disabled keys and both thumb rows.
 
 ## BASE
 
-SYM/NUM use the pinky columns beside the home row: tap for sticky activation; hold for momentary activation. Their former thumb keys are disabled.
+SYM/NUM: tap for sticky activation; hold for momentary activation.
 
-Caps Word sits under M, between End and Alt+Backspace; the former pinky Shift is disabled. Tap to toggle uppercase letters without native Caps Lock. Default ZMK behavior continues through letters, digits, underscore, Backspace, and Delete; Space, Enter, Escape, and other punctuation turn it off. Layer triggers alone do not turn it off.
-
-Thumb rows, ordered **inner → outer** on each hand:
-
-| Hand | Upper row | Lower row |
-| --- | --- | --- |
-| Left | Backspace · disabled · RGB | EXT/MOD · disabled · disabled |
-| Right | Enter · disabled · BT | Space · disabled · Fn |
-
-EXT/MOD + Enter still sends Shift+Enter.
+Caps Word: tap to toggle uppercase letters without native Caps Lock. Default ZMK behavior continues through letters, digits, underscore, Backspace, and Delete; Space, Enter, Escape, and other punctuation turn it off. Layer triggers alone do not turn it off.
 
 ![BASE layout](docs/layouts/base.svg)
 
