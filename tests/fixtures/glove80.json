@@ -52,7 +52,9 @@
       "67": "&caps_word",
       "68": "&kp LA(BSPC)",
       "69": "&ext_mod EXT MOD",
+      "70": "&hm HYPER_MOD HYPER_MOD",
       "72": "&mo FN",
+      "73": "&tmx",
       "74": "&kp SPACE",
       "75": "&kp LS(RET)",
       "76": "&kp RALT",
@@ -95,6 +97,8 @@
       "61": "&trans",
       "62": "&trans",
       "69": "&trans",
+      "70": "&trans",
+      "73": "&trans",
       "74": "&trans"
     },
     "EXT": {
@@ -126,6 +130,8 @@
       "59": "&kp TAB",
       "60": "&kp DEL",
       "69": "&trans",
+      "70": "&trans",
+      "73": "&trans",
       "74": "&trans"
     },
     "SYM": {
@@ -158,6 +164,8 @@
       "62": "&kp SEMI",
       "63": "&kp RBRC",
       "69": "&trans",
+      "70": "&trans",
+      "73": "&trans",
       "74": "&trans"
     },
     "NUM": {
@@ -189,6 +197,8 @@
       "67": "&kp DOT",
       "68": "&kp EQUAL",
       "69": "&kp N0",
+      "70": "&trans",
+      "73": "&trans",
       "74": "&trans"
     },
     "FN": {
@@ -209,7 +219,9 @@
       "67": "&kp F11",
       "68": "&kp F12",
       "69": "&trans",
+      "70": "&trans",
       "72": "&trans",
+      "73": "&trans",
       "74": "&trans"
     },
     "BT": {

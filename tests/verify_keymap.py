@@ -54,13 +54,13 @@ class Glove80KeymapTests(unittest.TestCase):
             "&mo BT", "&none", "&kp RET",
         ])
         self.assertEqual(base[69:75], [
-            "&ext_mod EXT MOD", "&none", "&none",
-            "&mo FN", "&none", "&kp SPACE",
+            "&ext_mod EXT MOD", "&hm HYPER_MOD HYPER_MOD", "&none",
+            "&mo FN", "&tmx", "&kp SPACE",
         ])
         self.assertEqual(self.layers["NUM"][69], "&kp N0")
         for name, bindings in self.layers.items():
             with self.subTest(layer=name):
-                for position in (53, 56, 70, 71, 73):
+                for position in (53, 56, 71):
                     self.assertEqual(bindings[position], "&none")
                 expected_rgb = {"BASE": "&mo RGB", "RGB": "&trans"}.get(name, "&none")
                 expected_bt = {"BASE": "&mo BT", "BT": "&trans"}.get(name, "&none")
@@ -74,6 +74,27 @@ class Glove80KeymapTests(unittest.TestCase):
                 if name == "BT" and position == 69:
                     expected = "&bt BT_SEL 0"
                 self.assertEqual(self.layers[name][position], expected)
+
+    def test_lower_middle_thumbs_duplicate_hyper_and_tmux(self):
+        base = self.layers["BASE"]
+        self.assertEqual(base[70], self.layers["MOD"][41])
+        self.assertEqual(base[73], self.layers["MOD"][44])
+        self.assertEqual(base[73], self.layers["EXT"][44])
+        self.assertEqual(self.layers["SYM"][39], "&sk HYPER_MOD")
+        self.assertEqual(self.layers["NUM"][40], "&sk HYPER_MOD")
+        for name in ("MOD", "EXT", "SYM", "NUM", "FN"):
+            for position in (70, 73):
+                with self.subTest(layer=name, position=position):
+                    self.assertEqual(self.layers[name][position], "&trans")
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        svg = ET.parse(ROOT / "docs/layouts/base.svg").getroot()
+        for upper, lower, label in ((53, 70, "Hyper*"), (56, 73, "TMX")):
+            top = svg.find(f'.//svg:g[@data-position="{upper}"]/svg:rect', ns)
+            bottom = svg.find(f'.//svg:g[@data-position="{lower}"]', ns)
+            rect = bottom.find("svg:rect", ns)
+            self.assertEqual(top.get("x"), rect.get("x"))
+            self.assertEqual(int(top.get("y")) + 60, int(rect.get("y")))
+            self.assertEqual(bottom.find("svg:text", ns).text, label)
 
     def test_inner_upper_thumbs_are_above_ext_mod_and_space(self):
         ns = {"svg": "http://www.w3.org/2000/svg"}

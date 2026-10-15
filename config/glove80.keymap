@@ -11,8 +11,9 @@
 // NUM and FN use the extra left bottom row.
 // All other additional finger keys and unused thumbs are disabled.
 // Thumb rows, listed inner-to-outer on each hand:
-//   Left inner-to-outer: Backspace / disabled / RGB above EXT/MOD / disabled / disabled.
-//   Right inner-to-outer: Enter / disabled / BT above Space / disabled / FN.
+//   Left inner-to-outer: Backspace / disabled / RGB above EXT/MOD / Hyper / disabled.
+//   Right inner-to-outer: Enter / disabled / BT above Space / tmux / FN.
+// Lower-middle Hyper/tmux duplicate the existing bindings; MOD/EXT/SYM/NUM/FN inherit them.
 //   Other factory thumb positions remain disabled.
 // NUM sends . and = on factory left-side Left/Right; 0 stays on EXT/MOD.
 
@@ -181,7 +182,7 @@
                 // Alpha bottom + upper thumbs
                 &none                   &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &kp BSPC                &none                   &mo RGB                 &mo BT                  &none                   &kp RET                 &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
                 // Extra bottom row: Home/End, Caps Word below M, Alt+Backspace, Shift+Enter below P, then Dictation + lower thumbs
-                &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &none                   &none                   &mo FN                  &none                   &kp SPACE                                       &kp LS(RET)             &kp RALT                &none                   &none                   &kp PG_DN
+                &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &hm HYPER_MOD HYPER_MOD &none                   &mo FN                  &tmx                    &kp SPACE                                       &kp LS(RET)             &kp RALT                &none                   &none                   &kp PG_DN
             >;
         };
 
@@ -199,7 +200,7 @@
                 // Alpha bottom + upper thumbs
                 &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &trans                  &none                   &none                   &none                   &none                   &kp LS(RET)             &trans                  &trans                  &trans                  &trans                  &trans                  &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &trans                  &none                   &none                   &none                   &none                   &trans                                          &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -217,7 +218,7 @@
                 // Alpha bottom + upper thumbs
                 &none                   &kp LG(RBKT)            &kp LG(X)               &kp LG(A)               &kp LG(C)               &kp LG(V)               &trans                  &none                   &none                   &none                   &none                   &kp LS(RET)             &none                   &kp TAB                 &kp DEL                 &none                   &none                   &none
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &trans                  &none                   &none                   &none                   &none                   &trans                                          &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -235,7 +236,7 @@
                 // Alpha bottom + upper thumbs
                 &none                   &none                   &none                   &none                   &none                   &none                   &kp BSPC                &none                   &none                   &none                   &none                   &trans                  &kp UNDER               &kp RPAR                &kp GT                  &kp RBKT                &kp SEMI                &kp RBRC
                 // Extra bottom row (unused) + lower thumbs
-                &none                   &none                   &none                   &none                   &none                                           &trans                  &none                   &none                   &none                   &none                   &trans                                          &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &none                   &none                                           &trans                  &trans                  &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -253,7 +254,7 @@
                 // Alpha bottom + upper thumbs
                 &none                   &kp COLON               &kp N4                  &kp N5                  &kp N6                  &kp ASTRK               &kp BSPC                &none                   &none                   &none                   &none                   &trans                  &none                   &none                   &kp COMMA               &none                   &none                   &none
                 // Extra bottom row: decimal/equal on factory Left/Right + lower thumbs
-                &none                   &none                   &none                   &kp DOT                 &kp EQUAL                                       &kp N0                  &none                   &none                   &none                   &none                   &trans                                          &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &none                   &kp DOT                 &kp EQUAL                                       &kp N0                  &trans                  &none                   &none                   &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
@@ -271,7 +272,7 @@
                 // Alpha bottom + upper thumbs: F4-F6 match NUM 4-6
                 &none                   &none                   &kp F4                  &kp F5                  &kp F6                  &none                   &trans                  &none                   &none                   &none                   &none                   &trans                  &none                   &none                   &none                   &none                   &none                   &none
                 // Extra bottom row: F10-F12 on factory End/Left/Right + lower thumbs
-                &none                   &none                   &kp F10                 &kp F11                 &kp F12                                         &trans                  &none                   &none                   &trans                  &none                   &trans                                          &none                   &none                   &none                   &none                   &none
+                &none                   &none                   &kp F10                 &kp F11                 &kp F12                                         &trans                  &trans                  &none                   &trans                  &trans                  &trans                                          &none                   &none                   &none                   &none                   &none
             >;
         };
 
