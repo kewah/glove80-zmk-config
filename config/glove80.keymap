@@ -2,7 +2,7 @@
 // Alpha rows use the inner five columns of physical rows 3, 4, and 5.
 // SYM/NUM use only the pinky columns beside the home row; Escape sits above SYM.
 // Default Caps Word toggles below M, between End and Alt+Backspace.
-// The former pinky Shift beside the left bottom alpha row is disabled.
+// BASE sends Shift from the left bottom pinky. The other layers leave that key empty so the EXT switchers still ignore only position 35.
 // BASE adds media controls on factory F1-F8 and Dictation (Right Alt) below P.
 // BASE sends Alt+Backspace on factory left-side Right; Left toggles Caps Word.
 // Backspace and Enter use the thumbs; EXT/MOD + Enter sends Shift+Enter.
@@ -180,7 +180,7 @@
                 // Alpha home
                 &sticky_layer SYM       &kp N                   &kp R                   &kp T                   &kp S                   &kp G                                                                                                                                                                       &kp Y                   &kp H                   &kp A                   &kp E                   &kp I                   &sticky_layer NUM
                 // Alpha bottom + upper thumbs
-                &none                   &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &kp BSPC                &none                   &mo RGB                 &mo BT                  &none                   &kp RET                 &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
+                &kp LSHFT               &kp Q                   &kp X                   &kp M                   &kp C                   &kp V                   &kp BSPC                &none                   &mo RGB                 &mo BT                  &none                   &kp RET                 &kp K                   &kp P                   &comma_qmark            &dot_excl               &slash_bslash           &kp PG_UP
                 // Extra bottom row: Home/End, Caps Word below M, Alt+Backspace, Shift+Enter below P, then Dictation + lower thumbs
                 &none                   &kp HOME                &kp END                 &caps_word              &kp LA(BSPC)                                    &ext_mod EXT MOD        &hm HYPER_MOD HYPER_MOD &none                   &mo FN                  &tmx                    &kp SPACE                                       &kp LS(RET)             &kp RALT                &none                   &none                   &kp PG_DN
             >;
